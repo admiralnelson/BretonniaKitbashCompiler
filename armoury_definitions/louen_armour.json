@@ -13,7 +13,7 @@
         "UiIcon": "assets/icons/louen_wh_dlc07_anc_armour_armour_of_the_midsummer_sun.png",
         "Thumbnail": null,
         "UnitCardThumbnail": null,
-        "VariantMesh": "variantmeshes/armour_torso/massif_wh_dlc07_anc_armour_armour_of_the_midsummer_sun.rigid_model_v2",
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_dlc07_anc_armour_armour_of_the_midsummer_sun_louen.rigid_model_v2",
         "VariantMeshDefinitionShouldCreate": true,
         "VariantMeshScale": 1,
         "VariantMeshMountScale": 1,
@@ -55,6 +55,153 @@
         "Powerlevel": 50
 
     },
+
+    {
+        "ItemName": "louen_wh_dlc07_anc_armour_cuirass_of_fortune",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "Gilded Cuirass",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "wh_dlc07_anc_armour_cuirass_of_fortune",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_wh_dlc07_anc_armour_cuirass_of_fortune.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_dlc07_anc_armour_cuirass_of_fortune.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key"
+        ],
+        "Powerlevel": 50
+
+    },
+
+    {
+        "ItemName": "louen_wh_main_anc_armour_armour_of_fortune",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "Gilded Cuirass",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "wh_main_anc_armour_armour_of_fortune",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_wh_main_anc_armour_armour_of_fortune.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_main_anc_armour_armour_of_fortune.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key"
+        ],
+        "Powerlevel": 50
+
+    },
+
+    {
+        "ItemName": "louen_wh_main_anc_armour_gamblers_armour",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "Gilded Cuirass",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "wh_main_anc_armour_gamblers_armour",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_wh_main_anc_armour_gamblers_armour.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_main_anc_armour_armour_of_gambler.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key"
+        ],
+        "Powerlevel": 50
+
+    },
+
+    {
+        "ItemName": "louen_wh_main_anc_armour_glittering_scales",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "Gilded Cuirass",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "wh_main_anc_armour_glittering_scales",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_wh_main_anc_armour_glittering_scales.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_main_anc_armour_glittering_scales.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key"
+        ],
+        "Powerlevel": 50
+
+    },
+
+    {
+        "ItemName": "louen_wh_main_anc_armour_armour_of_silvered_steel",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "Gilded Cuirass",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "wh_main_anc_armour_armour_of_silvered_steel",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_wh_main_anc_armour_armour_of_silvered_steel.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_torso/massif_wh_main_anc_armour_armour_of_silvered_steel.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key"
+        ],
+        "Powerlevel": 50
+
+    },
+
+
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_destiny",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",

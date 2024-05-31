@@ -3,11 +3,6 @@
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
         "Skeleton": "humanoid01c",
         "DefaultArmoryItemSet": "admiralnelson_armory_louen_leonceour_basic",
-        "PossibleMounts": {
-            "kitbasher_horse_louen_base": "wh_main_anc_mount_brt_louen_barded_warhorse",
-            "kitbasher_pegasus_louen_base": "wh_main_anc_mount_brt_louen_royal_pegasus",
-            "kitbasher_beaquis_louen_base": "wh_main_anc_mount_brt_louen_beaquis"
-        },
         "bCanUseShield": true
     }
 ]

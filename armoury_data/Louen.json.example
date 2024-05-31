@@ -6,11 +6,4 @@
     "Skeleton": "humanoid01c",
     "//": "The default armoury set this character will use",
     "DefaultArmoryItemSet": "admiralnelson_armory_louen_leonceour_basic"
-    "//": "Mounts that can be used by the character. The key is the armory item which is defined in armoury_definitions folder which maps to ancillary mount that is defined in the database table",
-    "//": "Leave it {}, if there's no mount"
-    "PossibleMounts": {
-        "kitbasher_horse_louen_base": "wh_main_anc_mount_brt_louen_barded_warhorse",
-        "kitbasher_pegasus_louen_base": "wh_main_anc_mount_brt_louen_royal_pegasus",
-        "kitbasher_beaquis_louen_base": "wh_main_anc_mount_brt_louen_beaquis",
-    }
 }

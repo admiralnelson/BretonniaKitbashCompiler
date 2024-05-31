@@ -7,7 +7,6 @@ namespace %PROJECT_NAME% {
         constructor() {
             BretonniaInGameKitbash.KitbashedCharacter.Register(
                 "%SUBTYPE_KEY%", {
-                possibleMounts: %POSSIBLE_MOUNTS%,
                 specialItems : %SPECIAL_ITEMS%,
                 defaultArmorySet: %DEFAULT_ARMOURY_SET%
             })

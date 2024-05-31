@@ -21,7 +21,6 @@ declare namespace BretonniaInGameKitbash {
     };
     type KitbashData = {
         defaultArmorySet: string;
-        possibleMounts: ArmoryItemToAncillary;
         specialItems: ArmoryItemToAncillary;
     };
     export class KitbashedCharacter extends Character {
@@ -37,15 +36,10 @@ declare namespace BretonniaInGameKitbash {
         IsValidKitbash(): boolean;
         HasValidKitbashConfig(): boolean;
         private EnableKitbash;
-        get AncillaryMountKey(): string | null;
-        DismountAll(): boolean;
-        Mount(armouryItemKeyMount: string): boolean;
-        IsArmouryItemKeyMount(armoryItemKeyMount: string): boolean;
         HasAmouryItemInCharacter(armouryItem: string): boolean;
         HasEquippedItem(itemKey: string): boolean;
         get EquippedArmoryItems(): string[];
         get AvailableArmoryItems(): string[];
-        private AssignDefaultArmoryItemForDefaultMount;
         DumpInfo(): void;
         /*******************
          *
@@ -57,10 +51,7 @@ declare namespace BretonniaInGameKitbash {
         private static Load;
         private static Save;
         private static SetupEventHandlers;
-        private static ProcessMountAncillary;
         private static ProcessSpecialAncillary;
-        private static CheckForMountChanges;
-        private static CheckForDismountChanges;
         private static ArmoryItemEquippedEvent;
         private static ArmouryItemUnequippedEvent;
         private static ReceivedAncillaryEvent;

@@ -143,7 +143,6 @@ function ReadArmouryData() {
                 'SubtypeKey', 
                 'Skeleton', 
                 'DefaultArmoryItemSet', 
-                "PossibleMounts",
                 "bCanUseShield"
             ]
             keys.forEach(key => {
@@ -151,12 +150,6 @@ function ReadArmouryData() {
                     throw new Error(`Missing key ${key} in object ${JSON.stringify(object)}`)
                 }
             })
-
-            const armouryMounts = Object.keys(object.PossibleMounts)
-            const itemNames = ArmouryDefs.map(item => item.ItemName);
-            for (const iterator of armouryMounts) {
-                if(!itemNames.includes(iterator)) throw new Error(`Undefined armory mount ${iterator} in object ${JSON.stringify(object)}`)
-            }
         })
 
         result = result.concat(objects)
@@ -192,7 +185,7 @@ function CheckForDuplicateSubtypeKey() {
 function CheckForInvalidTypes() {
     let errored = false
     for (const def of ArmouryDefs) {
-        const types = ["cape", "talisman", "head", "torso", "legs", "shield", "1handed", "2handed", "mount"]
+        const types = ["cape", "talisman", "head", "torso", "legs", "shield", "1handed", "2handed", "pauldrons"]
         if(!types.includes(def.Type)) {
             console.log(`Invalid type: ${def.Type} in item ${def.ItemName}`)
             errored = true
@@ -290,7 +283,7 @@ function CheckForIconsPath() {
 }
 
 /**
- * Ensure that default sets have cape, talisman, head, torso, legs, shield, 1handed, (or 2handed), (or mount)
+ * Ensure that default sets have cape, talisman, head, torso, legs, shield, 1handed, (or 2handed), (or pauldrons)
  */
 function CheckForDefaultSets() {
     let transformedData = {};
@@ -334,9 +327,7 @@ function CheckForVariantMesh() {
     let errored = false
     for (let item of ArmouryDefs) {
 
-        if (item["Type"] !== "mount" && 
-            item["Type"] !== "talisman" && 
-            item["Type"] !== "cape" && 
+        if (item["Type"] !== "talisman" && 
             item["VariantMesh"] == null) {
             console.warn(`Item ${item["ItemName"]} of type ${item["Type"]} has null VariantMesh.`);
             errored = true
@@ -418,7 +409,7 @@ function GenerateArmoryItemSetItems() {
 }
 
 /**
- * Generate armory_item_set_items_tables but dummy (use case for no mounts)
+ * Generate armory_item_set_items_tables but dummy (use case for no pauldrons)
  * @returns {Array<object>}
  */
 function GenerateDummyArmoryItemSetItems() {
@@ -532,7 +523,7 @@ function GenerateArmoryItemToCategorySets() {
             case "torso":
             case "cape":
             case "legs":
-            case "mount":
+            case "pauldrons":
                 categorySet = "generic"
                 break
             case "shield":
@@ -558,7 +549,7 @@ function GenerateArmoryItemToCategorySets() {
 }
 
 /**
- * Generate armory_item_to_category_sets_tables but dummy (use case for no mounts)
+ * Generate armory_item_to_category_sets_tables but dummy (use case for no pauldrons)
  * @returns {Array<object>}
  */
 function GenerateDummyArmoryItemToCategorySets() {
@@ -709,7 +700,7 @@ function GenerateArmoryItemVariants() {
             case "torso":
             case "cape":
             case "legs":
-            case "mount":
+            case "pauldrons":
             case "shield":
                 output.push({
                     armory_item: def.ItemName,
@@ -809,7 +800,7 @@ function GenerateArmoryItems() {
             case "legs":
                 slot = "legs"
                 break
-            case "mount":
+            case "pauldrons":
                 slot = "right_arm"
                 break
             case "shield":
@@ -920,8 +911,6 @@ function GenerateVariants() {
 
     for (const def of ArmouryDefs) {
         let variantMeshPath = def.VariantMeshMountScale || ""
-
-        if(def.Type == "mount") variantMeshPath = ""
 
         output.push({
             variant_name: def.ItemName,
@@ -1040,7 +1029,7 @@ function GenerateVariantMesh() {
     const partMapping = {
         "cape": "left_arm",
         "talisman": "tail",
-        "mount": "right_arm",
+        "pauldrons": "right_arm",
         "1handed": "weapon_2",
         "2handed": "weapon_1"
     }
@@ -1528,7 +1517,7 @@ function InsertDummyAssets() {
             fs.copyFileSync(fileRequiredAssetName3, dir)
         }
 
-        //mount
+        //pauldrons
         {
             const dummyIconName = `const_kitbasher_dummy_arm_right__${skeleton}.png`
 
@@ -1562,7 +1551,7 @@ function TransformArmouryDefsToSubtype() {
     const result = {}
 
     for (const item of ArmouryDefs) {
-        if (item.IsItemDefinedFromAncillary && item.Type != "mount") {
+        if (item.IsItemDefinedFromAncillary) {
             const subtypeKey = item.SubtypeKey
             const itemName = item.ItemName
             const associatedAncillaryKey = item.AssociatedAncillaryKey
@@ -1598,9 +1587,9 @@ function GenerateItemMappings() {
             Powerlevel: iterator.Powerlevel,
             Type: "legs"
         }
-        if(iterator.Type == "mount") output[iterator.ItemName] = {
+        if(iterator.Type == "pauldrons") output[iterator.ItemName] = {
             Powerlevel: iterator.Powerlevel,
-            Type: "mount"
+            Type: "pauldrons"
         }
         if(iterator.Type == "2handed" || iterator.Type ==  "1handed") output[iterator.ItemName] = {
             Powerlevel: iterator.Powerlevel,
@@ -1642,8 +1631,7 @@ function BuildScript() {
     let out =  ""
     for (const iterator of ArmouryData) {
 
-        
-        const possibleMounts = JSON.stringify(iterator.PossibleMounts)
+
         const defaultArmorySet = iterator.DefaultArmoryItemSet
         const SubtypeKey = iterator.SubtypeKey
 
@@ -1665,7 +1653,6 @@ function BuildScript() {
         const registerTemplate = `
 BretonniaInGameKitbash.KitbashedCharacter.Register(
     "${SubtypeKey}", {
-    possibleMounts: ${possibleMounts},
     specialItems : ${specialItemsSerialised},
     defaultArmorySet: "${defaultArmorySet}",
     armouryItemPreferences: ${preferencedItems},
