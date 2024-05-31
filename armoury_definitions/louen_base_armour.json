@@ -74,7 +74,9 @@
         "CampaignAnimation": null,
         "OnlyCompatibleWithItem": null,
         "AudioType": null,
-        "PreferencedItems": [],
+        "PreferencedItems": [
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
+        ],
         "Powerlevel": 25
 
     },

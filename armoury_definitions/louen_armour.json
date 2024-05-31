@@ -22,7 +22,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 100
 
@@ -50,7 +51,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -79,7 +81,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -108,7 +111,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -137,7 +141,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -166,7 +171,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -195,7 +201,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 50
 
@@ -225,7 +232,8 @@
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
-            "louen_admiralnelson_gilded_greaves_item_key"
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 110
     },
@@ -251,7 +259,10 @@
         "CampaignAnimation": null,
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
-        "PreferencedItems": [],
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
+        ],
         "Powerlevel": 25
 
     },
