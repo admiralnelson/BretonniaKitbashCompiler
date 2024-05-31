@@ -2,7 +2,7 @@
     {
         "ItemName": "louen_wh_dlc07_anc_armour_armour_of_the_midsummer_sun",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Midsummer Sun",
+        "LocalisedName": "Armour of Midsummer Sun",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -59,7 +59,7 @@
     {
         "ItemName": "louen_wh_dlc07_anc_armour_cuirass_of_fortune",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Cuirass",
+        "LocalisedName": "Cuirass of Fortune",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -88,7 +88,7 @@
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_fortune",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Cuirass",
+        "LocalisedName": "Armour of Fortune",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -117,7 +117,7 @@
     {
         "ItemName": "louen_wh_main_anc_armour_gamblers_armour",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Cuirass",
+        "LocalisedName": "Gambler's Armour",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -146,7 +146,7 @@
     {
         "ItemName": "louen_wh_main_anc_armour_glittering_scales",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Cuirass",
+        "LocalisedName": "The Gilterring Scales",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -175,7 +175,7 @@
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_silvered_steel",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Cuirass",
+        "LocalisedName": "Plate of Silvered Steel",
         "Description": "None",
         "Type": "torso", 
         "IsItemDefinedFromAncillary": true,
@@ -287,7 +287,7 @@
     {
         "ItemName": "louen_admiralnelson_silvered_greaves_item_key",
         "SubtypeKey": "wh_main_brt_louen_leoncouer",
-        "LocalisedName": "Gilded Greaves",
+        "LocalisedName": "Silvered Greaves",
         "Description": "None",
         "Type": "legs", 
         "IsItemDefinedFromAncillary": true,

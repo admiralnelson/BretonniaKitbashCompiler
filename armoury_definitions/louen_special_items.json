@@ -23,7 +23,8 @@
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
             "louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs",
-            "louen_admiralnelson_louen_royal_cape_item_key"
+            "louen_admiralnelson_louen_royal_cape_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 110
     },
@@ -128,5 +129,30 @@
         "AudioType": null,
         "PreferencedItems": [],
         "Powerlevel": 25
+    },
+    {
+        "ItemName": "kitbasher_pauldrons_louen_the_armour_of_briliance",
+        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "LocalisedName": "The Armour Of Briliance",
+        "Description": "None",
+        "Type": "pauldrons", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_louen_royal_pauldrons_pauldrons_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/kitbasher_pauldrons_louen_the_armour_of_briliance.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_pauldrons/massif_louen_legendary_pauldrons.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": null,
+        "PreferencedItems": [],
+        "Powerlevel": 110
     }
 ]
