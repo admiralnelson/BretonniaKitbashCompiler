@@ -74,8 +74,6 @@ declare namespace BretonniaInGameKitbash {
         private static Save;
         private static SetupEventHandlers;
         private static ProcessSpecialAncillary;
-        private static ArmoryItemEquippedEvent;
-        private static ArmouryItemUnequippedEvent;
         private static ReceivedAncillaryEvent;
         static DumpManager(): void;
     }
