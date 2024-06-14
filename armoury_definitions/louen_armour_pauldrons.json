@@ -1,7 +1,7 @@
 [
     {
         "ItemName": "louen_admiralnelson_lordly_pauldron_of_courage_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Big Pauldrons",
         "Description": "None",
         "Type": "pauldrons", 
@@ -27,7 +27,7 @@
     },
     {
         "ItemName": "louen_admiralnelson_gilded_pauldrons_with_rondels_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gilded Pauldrons With Rondels",
         "Description": "None",
         "Type": "pauldrons", 
@@ -54,7 +54,7 @@
 
     {
         "ItemName": "louen_admiralnelson_pauldrons_with_single_neck_guard_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Pauldrons With Single Neck Guard",
         "Description": "None",
         "Type": "pauldrons", 
@@ -81,7 +81,7 @@
 
     {
         "ItemName": "louen_admiralnelson_pauldrons_with_neck_guard_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Pauldrons With Neck Guard",
         "Description": "None",
         "Type": "pauldrons", 
@@ -108,7 +108,7 @@
 
     {
         "ItemName": "louen_admiralnelson_gilded_pauldrons_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gilded Pauldrons",
         "Description": "None",
         "Type": "pauldrons", 
@@ -135,7 +135,7 @@
 
     {
         "ItemName": "louen_admiralnelson_fleur_de_lys_rondels_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Fleur de Lys Rondels",
         "Description": "None",
         "Type": "pauldrons", 
@@ -162,7 +162,7 @@
 
     {
         "ItemName": "louen_admiralnelson_gilded_rondels_pauldrons_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gilded Rondels",
         "Description": "None",
         "Type": "pauldrons", 

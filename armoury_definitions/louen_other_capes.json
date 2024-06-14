@@ -1,7 +1,7 @@
 [
     {
         "ItemName": "louen_admiralnelson_paladin_cape_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Paladin Cape",
         "Description": "None",
         "Type": "cape", 
@@ -28,7 +28,7 @@
 
     {
         "ItemName": "louen_admiralnelson_legacy_cape_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Count Bernard's Cape",
         "Description": "None",
         "Type": "cape", 
@@ -55,7 +55,7 @@
 
     {
         "ItemName": "louen_admiralnelson_grail_knight_cape_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Grail Knight Cape I",
         "Description": "None",
         "Type": "cape", 

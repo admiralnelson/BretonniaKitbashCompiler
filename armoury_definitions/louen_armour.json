@@ -1,7 +1,7 @@
 [
     {
         "ItemName": "louen_wh_dlc07_anc_armour_armour_of_the_midsummer_sun",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Armour of Midsummer Sun",
         "Description": "None",
         "Type": "torso", 
@@ -30,7 +30,7 @@
     },
     {
         "ItemName": "louen_wh_dlc07_anc_armour_gilded_cuirass",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gilded Cuirass",
         "Description": "None",
         "Type": "torso", 
@@ -60,7 +60,7 @@
 
     {
         "ItemName": "louen_wh_dlc07_anc_armour_cuirass_of_fortune",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Cuirass of Fortune",
         "Description": "None",
         "Type": "torso", 
@@ -90,7 +90,7 @@
 
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_fortune",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Armour of Fortune",
         "Description": "None",
         "Type": "torso", 
@@ -120,7 +120,7 @@
 
     {
         "ItemName": "louen_wh_main_anc_armour_gamblers_armour",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gambler's Armour",
         "Description": "None",
         "Type": "torso", 
@@ -150,7 +150,7 @@
 
     {
         "ItemName": "louen_wh_main_anc_armour_glittering_scales",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Gilterring Scales",
         "Description": "None",
         "Type": "torso", 
@@ -180,7 +180,7 @@
 
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_silvered_steel",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Plate of Silvered Steel",
         "Description": "None",
         "Type": "torso", 
@@ -211,7 +211,7 @@
 
     {
         "ItemName": "louen_wh_main_anc_armour_armour_of_destiny",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Armour of Destiny",
         "Description": "None",
         "Type": "torso", 
@@ -239,7 +239,7 @@
     },
     {
         "ItemName": "louen_admiralnelson_armour_of_revered_tabard_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Revered Tabard of Saint Blanc",
         "Description": "None",
         "Type": "torso", 
@@ -270,7 +270,7 @@
 
     {
         "ItemName": "louen_admiralnelson_gilded_greaves_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Gilded Greaves",
         "Description": "None",
         "Type": "legs", 
@@ -297,7 +297,7 @@
 
     {
         "ItemName": "louen_admiralnelson_silvered_greaves_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Silvered Greaves",
         "Description": "None",
         "Type": "legs", 

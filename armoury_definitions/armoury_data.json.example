@@ -1,8 +1,8 @@
 [
     {
         "//": "PLEASE REMOVE // before pasting this into the as .json",
-        "//": "Agent subtype key, for whom this item is intended",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "//": "Agent subtype keys, for whom this item is intended for, accepts an array, MUST BE DEFINED in armoury_data",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "//": "This defines your item name internally, keep this unique! even for different type os Skeleton!",
         "ItemName": "kitbasher_horse_louen_base",
         "//": "LocalisedName is displayed on the UI",
@@ -31,7 +31,7 @@
         "UnitCardThumbnail": null,
         "//": "VariantMesh path for this item, could be null if item has no appearance. Do not set it to null if it's head or torso or legs piece",
         "VariantMesh": null,
-        "//": "If this set to true, then VariantMeshDefinition will be generated from VariantMesh path which points to .wsmodel or .rigid_model_v2",
+        "//": "If this set to true, then VariantMeshDefinition will be generated from VariantMesh path which points to .wsmodel or .wsmodel",
         "VariantMeshDefinitionShouldCreate": false,
         "//": "VariantMesh scale",
         "VariantMeshScale": 1,

@@ -1,7 +1,7 @@
 [
     {
         "ItemName": "louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Armour Of Briliance",
         "Description": "None",
         "Type": "torso", 
@@ -30,7 +30,7 @@
     },
     {
         "ItemName": "louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Armour Of Briliance",
         "Description": "None",
         "Type": "legs", 
@@ -55,7 +55,7 @@
     },
     {
         "ItemName": "louen_admiralnelson_louen_royal_cape_item_key",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Louen's Royal Robe",
         "Description": "Louen's Royal Robe Blablablablaa",
         "Type": "cape", 
@@ -82,7 +82,7 @@
     },
     {
         "ItemName": "kitbasher_head_louen_crown",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Bretonnia Royal Crown",
         "Description": "None",
         "Type": "head", 
@@ -107,7 +107,7 @@
     },
     {
         "ItemName": "kitbasher_head_louen_battle_crown",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Bretonnia Battle Crown",
         "Description": "None",
         "Type": "head", 
@@ -132,7 +132,7 @@
     },
     {
         "ItemName": "kitbasher_pauldrons_louen_the_armour_of_briliance",
-        "SubtypeKey": "wh_main_brt_louen_leoncouer",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Armour Of Briliance",
         "Description": "None",
         "Type": "pauldrons", 
