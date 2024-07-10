@@ -1348,8 +1348,8 @@ function GenerateCsv_variants_tables(data, projectName) {
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
 
-console.log("Processing agent_subtypes_to_armory_item_sets_tables")
-GenerateCsv_agent_subtypes_to_armory_item_sets_tables(GenerateArmoryAgentSubtypesToArmoryItemSets(), PROJECT_NAME)
+//console.log("Processing agent_subtypes_to_armory_item_sets_tables")
+//GenerateCsv_agent_subtypes_to_armory_item_sets_tables(GenerateArmoryAgentSubtypesToArmoryItemSets(), PROJECT_NAME)
 
 console.log("Processing armory_item_set_items_tables")
 GenerateCsv_armory_item_set_items_tables(GenerateArmoryItemSetItems(), PROJECT_NAME)
