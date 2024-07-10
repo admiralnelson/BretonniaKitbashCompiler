@@ -1692,7 +1692,7 @@ BretonniaInGameKitbash.KitbashedCharacter.Register(
     defaultArmorySet: "${defaultArmorySet}",
     armouryItemPreferences: ${preferencedItems},
     bCanUseShield: ${iterator.bCanUseShield},
-    skeletonType: ${iterator.Skeleton}
+    skeletonType: "${iterator.Skeleton}"
 })
 
 `
