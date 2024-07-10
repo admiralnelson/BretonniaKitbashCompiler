@@ -43,6 +43,7 @@ declare namespace BretonniaInGameKitbash {
         specialItems: ArmoryItemToAncillary;
         armouryItemPreferences: ArmoryItemToArmoryItems;
         bCanUseShield: boolean;
+        skeletonType: string;
     };
     export class KitbashedCharacter extends Character {
         private static EnabledFactions;
