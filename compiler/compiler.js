@@ -211,6 +211,20 @@ function CheckForDuplicateItemName() {
     }
 }
 
+/**
+ * Runs check against ArmouryDefs
+ * If armoury def is a type of head, the name should contain "head" in it
+ */
+function CheckForDuplicateItemName() {
+
+    for (const object of ArmouryDefs) {
+        if(object.Type != "head") continue
+
+        if(!object.ItemName.includes("head")) {
+            throw "this object " + object.ItemName + " is a type of head but does not contain 'head' in it, this will result in invisible thumbnail/card"
+        }
+    }
+}
 
 /**
  * Ensure that thumbnails defined in the ArmouryDef are valid
@@ -241,7 +255,7 @@ function CheckForThumbnailPath() {
         }
         
         if(def.ItemName.length > 40) {
-            console.log(`Head ItemName is too long (which is tied to your porthole/unitcard pngs): ${unitCardThumbnailPath}, ItemName is ${def.ItemName}`)
+            console.log(`Head ItemName is too long (which is tied to your porthole/unitcard pngs): ${unitCardThumbnailPath}, ItemName is ${def.ItemName} max is 40, yours is ${def.ItemName.length}`)
             errored = true
         }
     }
@@ -339,11 +353,23 @@ function CheckForVariantMesh() {
 
 function CheckPreferencedItemsPointsToValidItem() {
     const itemNames = ArmouryDefs.map(item => item.ItemName)
+    const itemNamesToSkeleton =  ArmouryDefs.reduce((obj, item) => {
+        obj[item.ItemName] = item.Skeleton;
+        return obj;
+    }, {});
 
     for (const item of ArmouryDefs) {
         if(item.PreferencedItems == null || item.PreferencedItems.length == 0) continue
         if(!item.PreferencedItems.every(elem => itemNames.includes(elem))) {
             throw "ItemName " + item.ItemName + " has invalid undefined item defined in  PreferencedItems: " + JSON.stringify(item.PreferencedItems)
+        }
+
+        for (const item2 of item.PreferencedItems) {
+            if(!itemNamesToSkeleton[item2]) 
+                throw "ItemName " + item2 + " has invalid undefined item defined in  PreferencedItems: " + JSON.stringify(item.PreferencedItems)
+
+            if(itemNamesToSkeleton[item2] != item.Skeleton) 
+                throw "ItemName " + item2 + " has invalid mismatch skeleton " + item2 + " is " + itemNamesToSkeleton[item2] + " but parent item is " + item.Skeleton + "\n" + JSON.stringify(item)
         }
     }
 
@@ -365,6 +391,7 @@ function CheckIfSubtypeIsValidInArmouryItem() {
 }
 
 console.log("Validating data")
+CheckForDuplicateItemName()
 CheckForDuplicateSubtypeKey()
 CheckForDuplicateItemName()
 CheckForInvalidTypes()
