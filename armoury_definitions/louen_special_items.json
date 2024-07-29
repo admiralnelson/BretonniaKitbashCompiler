@@ -154,5 +154,30 @@
         "AudioType": null,
         "PreferencedItems": [],
         "Powerlevel": 110
+    },
+    {
+        "ItemName": "kitbasher_head_louen_great_helm_special",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
+        "LocalisedName": "THE Great Helmet",
+        "Description": "None",
+        "Type": "head", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_louen_royal_great_helmet_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/kitbasher_head_louen_great_helm_special.png",
+        "Thumbnail": "assets/porthole/kitbasher_head_louen_great_helm_special.png",
+        "UnitCardThumbnail": "assets/unit/kitbasher_head_louen_great_helm_special.png",
+        "VariantMesh": "variantmeshes\\armour_helmet\\visible_face\\louen_bucket_helmet\\louen_bucket_helmet.rigid_model_v2",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": null,
+        "PreferencedItems": [],
+        "Powerlevel": 10
     }
 ]
