@@ -1,0 +1,119 @@
+[
+    {
+        "AncillaryKey" : "wh2_dlc12_anc_armour_brt_armour_of_brilliance",
+        "PowerLevel" : 200,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 35
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs",
+        "PowerLevel" : 200,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "louen_admiralnelson_louen_royal_cape_item_key",
+        "PowerLevel" : 200,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_aura_leadership_effect",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "kitbasher_head_louen_crown",
+        "PowerLevel" : 100,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_leadership",
+                "Scope" : "general_to_force_own",
+                "Value" : 20
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "kitbasher_head_louen_battle_crown",
+        "PowerLevel" : 200,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_leadership",
+                "Scope" : "general_to_force_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "kitbasher_pauldrons_louen_the_armour_of_briliance",
+        "PowerLevel" : 200,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_leadership",
+                "Scope" : "general_to_force_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_louen_royal_great_helmet_item_key",
+        "PowerLevel" : 190,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 40
+            } 
+        ]
+    }
+]

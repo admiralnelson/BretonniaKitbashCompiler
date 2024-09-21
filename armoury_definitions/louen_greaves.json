@@ -1,0 +1,112 @@
+[
+    {
+        "ItemName": "louen_admiralnelson_silvered_greaves_item_key",
+        "SubtypeKeys": [
+            "wh_main_brt_louen_leoncouer"
+        ],
+        "LocalisedName": "Silvered Steel Greaves",
+        "Description": "Crafted with precision, these Silvered Steel Greaves offer a sleek and sturdy defense for the knight who values both form and function. Their polished surface gleams in the light, a reflection of the knight's commitment to the ideals of chivalry.",
+        "Type": "legs", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_silvered_greaves_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_admiralnelson_silvered_greaves_item_key.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_legs/massif_legs_1/test_legs.wsmodel",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": []
+        
+    },
+    {
+        "ItemName": "louen_admiralnelson_steel_greaves_with_gold_trim_item_key",
+        "SubtypeKeys": [
+            "wh_main_brt_louen_leoncouer"
+        ],
+        "LocalisedName": "Simple Gilded Greaves",
+        "Description": "These finely crafted greaves are adorned with gilded fleur-de-lis emblems on the kneecaps, symbolizing nobility and valor.",
+        "Type": "legs", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_steel_greaves_with_gold_trim_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_admiralnelson_steel_greaves_with_gold_trim_item_key.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_legs/massif_legs_2/test_legs_2.wsmodel",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": []
+        
+    },
+    {
+        "ItemName": "louen_admiralnelson_gilded_greaves_item_key",
+        "SubtypeKeys": [
+            "wh_main_brt_louen_leoncouer"
+        ],
+        "LocalisedName": "Ornate Gilded Greaves",
+        "Description": "These resplendent greaves are a testament to the skill of Bretonnia's finest smiths. Forged from the purest steel and adorned with gilded fleur-de-lis, they provide not only formidable protection but also serve as a symbol of the knightly honor and chivalry they represent.",
+        "Type": "legs", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_gilded_greaves_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_admiralnelson_gilded_greaves_item_key.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_legs/massif_legs_3/test_legs_3.wsmodel",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": []
+        
+
+    },
+    {
+        "ItemName": "louen_admiralnelson_ornate_steel_greaves_item_key",
+        "SubtypeKeys": [
+            "wh_main_brt_louen_leoncouer"
+        ],
+        "LocalisedName": "Old Knight Greaves",
+        "Description": "The deep, burnished steel is accentuated with fine golden inlays, creating a pattern that is both regal and intimidating.",
+        "Type": "legs", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_ornate_steel_greaves_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_admiralnelson_ornate_steel_greaves_item_key.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes/armour_legs/massif_legs_4/test_legs_4.wsmodel",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": []
+        
+
+    }
+]

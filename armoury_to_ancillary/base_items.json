@@ -1,0 +1,50 @@
+[
+    {
+        "AncillaryKey" : "no_legs",
+        "comment": "no_legs",
+        "PowerLevel" : -100,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : -10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "no_armour",
+        "comment": "no_armour",
+        "PowerLevel" : -50,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : -10
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_basic_armour_item_key",
+        "comment": "starting armour",
+        "PowerLevel" : 1,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 3
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_basic_greaves_item_key",
+        "comment": "starting legs",
+        "PowerLevel" : 1,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 3
+            }
+        ]
+    }
+]
