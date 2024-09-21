@@ -106,7 +106,6 @@ function ReadArmouryDefinitions() {
                 "SubtypeKeys",
                 "VariantMeshDefinitionShouldCreate",
                 "PreferencedItems",
-                "Powerlevel"
             ]
             keys.forEach(key => {
                 if (!(key in object)) {
@@ -159,8 +158,59 @@ function ReadArmouryData() {
 
 }
 
+/**
+ * Reads *.json and parse it then concat as big array
+ * @returns {Array<object>}
+ */
+function ReadAncillaryData() {
+    const directoryPath = path.join(__dirname, '../armoury_to_ancillary')
+    let result = []
+
+    const files = fs.readdirSync(directoryPath)
+
+    const jsonFiles = files.filter(file => path.extname(file).toLowerCase() === '.json')
+
+    for (let file of jsonFiles) {
+        const filePath = path.join(directoryPath, file)
+        const data = fs.readFileSync(filePath)
+        
+        const objects = JSON.parse(data)
+        objects.forEach(object => {
+            const keys = [
+                'AncillaryKey', 
+                'PowerLevel', 
+                'Effects', 
+            ]
+            keys.forEach(key => {
+                if (!(key in object)) {
+                    throw new Error(`Missing key ${key} in object ${JSON.stringify(object)}`)
+                }
+            })
+
+            object.Effects.forEach(effects => {
+                const keys = [
+                    'EffectKey', 
+                    'Scope', 
+                    'Value', 
+                ]
+
+                keys.forEach(key => {
+                    if (!(key in effects)) {
+                        throw new Error(`Missing key ${key} in object ${JSON.stringify(object)}`)
+                    }
+                })
+            })
+        })
+
+        result = result.concat(objects)
+    }
+
+    return result
+}
+
 const ArmouryDefs = ReadArmouryDefinitions()
 const ArmouryData = ReadArmouryData()
+const AncillaryData = ReadAncillaryData()
 
 /**
  * Validates before compiling
@@ -261,6 +311,48 @@ function CheckForThumbnailPath() {
     }
 
     if(errored) throw "found invalid thumbnail"
+}
+
+/**
+ * Runs check against AncillaryData
+ * If found another same AncillaryKey, it throws an exception
+ */
+function CheckForDuplicateSubtypeKey() {
+    const seen = new Set();
+
+    for (const object of AncillaryData) {
+        if (seen.has(object.AncillaryKey)) {
+            throw new Error(`Duplicate AncillaryKey found: ${object.AncillaryKey}`);
+        }
+        seen.add(object.AncillaryKey);
+    }
+}
+
+/**
+ * Get ancillary data by its key
+ * @param {string} key 
+ * @returns {object}
+ */
+function GetAncillaryByKey(key) {
+    const ret = AncillaryData.filter( (item) =>  item.AncillaryKey == key)
+    if(ret.length == 1) return ret[0]
+
+    return null
+}
+
+/**
+ * Throws a warning if armoury item not defined in armoury_to_ancillary
+ */
+function CheckForAncillaryMapping() {
+    for (const def of ArmouryDefs) {
+        if(def.AssociatedAncillaryKey == null) continue
+
+        if(!GetAncillaryByKey(def.AssociatedAncillaryKey)) {
+            console.warn(`WARNING: armoury item ${def.ItemName} referenced undefined ancillary ${def.AssociatedAncillaryKey}`)
+        }
+
+    }
+
 }
 
 /**
@@ -395,6 +487,7 @@ CheckForDuplicateItemName()
 CheckForDuplicateSubtypeKey()
 CheckForDuplicateItemName()
 CheckForInvalidTypes()
+CheckForAncillaryMapping()
 CheckForIconsPath()
 CheckForThumbnailPath()
 CheckForDefaultSets()
@@ -1325,6 +1418,31 @@ function GenerateCsv_armory_items_tables(data, projectName) {
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
 
+function GenerateCsv_armory_items_to_effects_tables(data, projectName) {
+    const randomNumbering = Math.floor(Math.random() * 1000000)
+    const header = `armory_item	effect	effect_scope	value\n`+
+    `#armory_items_to_effects_tables;0;db/armory_items_to_effects_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+
+    let out = ""
+    for (const item of data) {
+        const ancillaryData = GetAncillaryByKey(item.AssociatedAncillaryKey)
+        if(ancillaryData == null) continue
+
+        for (const effect of ancillaryData.Effects) {
+            out += `${item.ItemName}	${effect.EffectKey}	${effect.Scope}	${effect.Value}		\n`
+        }
+    }
+
+    const result = (header + out).trim()
+    let dir = path.join('build', 'intermediate', "db", "armory_items_to_effects_tables")
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir, { recursive: true })
+    }
+    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tsv = header + out
+    fs.writeFileSync(path.join(dir, tableName), tsv)
+
+}
 
 function GenerateCsv_battle_skeleton_parts_tables(data, projectName) {
 
@@ -1407,6 +1525,9 @@ GenerateCsv_armory_item_variants_tables(GenerateDummyArmoryItemVariants(), PROJE
 console.log("Processing armory_items_tables")
 GenerateCsv_armory_items_tables(GenerateArmoryItems(), PROJECT_NAME)
 GenerateCsv_armory_items_tables(GenerateDummyArmoryItems(), PROJECT_NAME + "_default")
+
+console.log("Processing armory_items_to_effects_tables")
+GenerateCsv_armory_items_to_effects_tables(ArmouryDefs, PROJECT_NAME)
 
 console.log("Processing battle_skeleton_parts_tables")
 GenerateCsv_battle_skeleton_parts_tables(GenerateBattleSkeletonParts(), PROJECT_NAME)
@@ -1633,33 +1754,43 @@ function GenerateItemMappings() {
     const output = {}
 
     for (const iterator of ArmouryDefs) {
+        const ancillaryData = GetAncillaryByKey(iterator.AssociatedAncillaryKey)
+        let powerLevel = 0
+        if(ancillaryData != null) {
+            powerLevel = ancillaryData.PowerLevel
+        }
+
         if(iterator.Type == "head") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "head"
         }
         if(iterator.Type == "cape") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "cape"
         }
         if(iterator.Type == "torso") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "torso"
         }
         if(iterator.Type == "legs") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "legs"
         }
         if(iterator.Type == "pauldrons") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "pauldrons"
         }
         if(iterator.Type == "2handed" || iterator.Type ==  "1handed") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "weapon"
         }
         if(iterator.Type == "shield") output[iterator.ItemName] = {
-            Powerlevel: iterator.Powerlevel,
+            Powerlevel: powerLevel,
             Type: "shield"
+        }
+        if(iterator.Type == "talisman") output[iterator.ItemName] = {
+            Powerlevel: powerLevel,
+            Type: "talisman"
         }
     }
 
@@ -1782,6 +1913,7 @@ function BuildPack() {
     const armory_item_variant_ui_infos_tables = path.join('build', 'intermediate', "db", "armory_item_variant_ui_infos_tables")
     const armory_item_variants_tables = path.join('build', 'intermediate', "db", "armory_item_variants_tables")
     const armory_items_tables = path.join('build', 'intermediate', "db", "armory_items_tables")
+    const armory_items_to_effects_tables = path.join("build", "intermediate", "db", "armory_items_to_effects_tables")
     const battle_skeleton_parts_tables = path.join('build', 'intermediate', "db", "battle_skeleton_parts_tables")
     const variants_tables = path.join('build', 'intermediate', "db", "variants_tables")
     
@@ -1841,6 +1973,7 @@ function BuildPack() {
         `--folder-path`, `${armory_item_variant_ui_infos_tables}`,
         `--folder-path`, `${armory_item_variants_tables}`,
         `--folder-path`, `${armory_items_tables}`,
+        `--folder-path`, `${armory_items_to_effects_tables}`,
         `--folder-path`, `${battle_skeleton_parts_tables}`,
         `--folder-path`, `${variants_tables}`,
 
