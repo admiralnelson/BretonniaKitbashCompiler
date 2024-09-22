@@ -32,7 +32,7 @@
         ]
     },
     {
-        "AncillaryKey" : "louen_admiralnelson_louen_royal_cape_item_key",
+        "AncillaryKey" : "admiralnelson_louen_royal_cape_item_key",
         "PowerLevel" : 200,
         "Effects" : [
             {
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "AncillaryKey" : "kitbasher_head_louen_crown",
+        "AncillaryKey" : "admiralnelson_louen_royal_crown_item_key",
         "PowerLevel" : 100,
         "Effects" : [
             {
@@ -59,7 +59,7 @@
         ]
     },
     {
-        "AncillaryKey" : "kitbasher_head_louen_battle_crown",
+        "AncillaryKey" : "admiralnelson_louen_royal_battle_crown_item_key",
         "PowerLevel" : 200,
         "Effects" : [
             {
@@ -85,7 +85,7 @@
         ]
     },
     {
-        "AncillaryKey" : "kitbasher_pauldrons_louen_the_armour_of_briliance",
+        "AncillaryKey" : "admiralnelson_louen_royal_pauldrons_pauldrons_item_key",
         "PowerLevel" : 200,
         "Effects" : [
             {
