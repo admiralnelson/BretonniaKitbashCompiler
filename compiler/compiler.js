@@ -1233,7 +1233,7 @@ function GenerateCsv_agent_subtypes_to_armory_item_sets_tables(data, projectName
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item_set	agent_subtype\n` +
-    `#agent_subtypes_to_armory_item_sets_tables;0;db/agent_subtypes_to_armory_item_sets_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#agent_subtypes_to_armory_item_sets_tables;0;db/agent_subtypes_to_armory_item_sets_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1245,7 +1245,7 @@ function GenerateCsv_agent_subtypes_to_armory_item_sets_tables(data, projectName
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1254,7 +1254,7 @@ function GenerateCsv_armory_item_set_items_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	armory_item_set\n` +
-    `#armory_item_set_items_tables;0;db/armory_item_set_items_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_set_items_tables;0;db/armory_item_set_items_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1266,7 +1266,7 @@ function GenerateCsv_armory_item_set_items_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1275,7 +1275,7 @@ function GenerateCsv_armory_item_sets_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `key\n` +
-    `#armory_item_sets_tables;0;db/armory_item_sets_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_sets_tables;0;db/armory_item_sets_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1287,7 +1287,7 @@ function GenerateCsv_armory_item_sets_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1296,7 +1296,7 @@ function GenerateCsv_armory_item_slot_blacklists_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	slot\n` +
-    `#armory_item_slot_blacklists_tables;0;db/armory_item_slot_blacklists_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_slot_blacklists_tables;0;db/armory_item_slot_blacklists_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1308,7 +1308,7 @@ function GenerateCsv_armory_item_slot_blacklists_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1317,7 +1317,7 @@ function GenerateCsv_armory_item_to_category_sets_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	category_set\n` +
-    `#armory_item_to_category_sets_tables;0;db/armory_item_to_category_sets_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_to_category_sets_tables;0;db/armory_item_to_category_sets_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1329,7 +1329,7 @@ function GenerateCsv_armory_item_to_category_sets_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1338,7 +1338,7 @@ function GenerateCsv_armory_item_ui_infos_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	type\n` +
-    `#armory_item_ui_infos_tables;1;db/armory_item_ui_infos_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_ui_infos_tables;1;db/armory_item_ui_infos_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1350,7 +1350,7 @@ function GenerateCsv_armory_item_ui_infos_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1359,7 +1359,7 @@ function GenerateCsv_armory_item_variant_ui_infos_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `key\n` +
-    `#armory_item_variant_ui_infos_tables;0;db/armory_item_variant_ui_infos_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_variant_ui_infos_tables;0;db/armory_item_variant_ui_infos_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1371,7 +1371,7 @@ function GenerateCsv_armory_item_variant_ui_infos_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1380,7 +1380,7 @@ function GenerateCsv_armory_item_variants_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	variant	battle_animation	campaign_animation	use_as_default	ui_info\n` +
-    `#armory_item_variants_tables;0;db/armory_item_variants_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_item_variants_tables;0;db/armory_item_variants_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1392,7 +1392,7 @@ function GenerateCsv_armory_item_variants_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1401,7 +1401,7 @@ function GenerateCsv_armory_items_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `key	slot_type\n` +
-    `#armory_items_tables;0;db/armory_items_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_items_tables;0;db/armory_items_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1413,7 +1413,7 @@ function GenerateCsv_armory_items_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1421,7 +1421,7 @@ function GenerateCsv_armory_items_tables(data, projectName) {
 function GenerateCsv_armory_items_to_effects_tables(data, projectName) {
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `armory_item	effect	effect_scope	value\n`+
-    `#armory_items_to_effects_tables;0;db/armory_items_to_effects_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#armory_items_to_effects_tables;0;db/armory_items_to_effects_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1438,7 +1438,7 @@ function GenerateCsv_armory_items_to_effects_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 
@@ -1448,7 +1448,7 @@ function GenerateCsv_battle_skeleton_parts_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `variant_name	skeleton	root_joint\n` +
-    `#battle_skeleton_parts_tables;1;db/battle_skeleton_parts_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#battle_skeleton_parts_tables;1;db/battle_skeleton_parts_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (const item of data) {
@@ -1460,7 +1460,7 @@ function GenerateCsv_battle_skeleton_parts_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1469,7 +1469,7 @@ function GenerateCsv_variants_tables(data, projectName) {
 
     const randomNumbering = Math.floor(Math.random() * 1000000)
     const header = `variant_name	tech_folder	variant_filename	low_poly_filename	mount_scale	scale	scale_variation	super_low_poly_filename\n` +
-    `#variants_tables;6;db/variants_tables/@__${projectName}_${randomNumbering}_armory_data	\n`
+    `#variants_tables;6;db/variants_tables/ZZ_${projectName}_${randomNumbering}_armory_data	\n`
 
     let out = ""
     for (let item of data) {
@@ -1488,7 +1488,7 @@ function GenerateCsv_variants_tables(data, projectName) {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir, { recursive: true })
     }
-    const tableName = `@__${projectName}_${randomNumbering}_armory_data.tsv`
+    const tableName = `ZZ_${projectName}_${randomNumbering}_armory_data.tsv`
     const tsv = header + out
     fs.writeFileSync(path.join(dir, tableName), tsv)
 }
@@ -1926,6 +1926,12 @@ function BuildPack() {
     const variantmeshes = path.join('build', 'intermediate', "variantmeshes", "variantmeshdefinitions", "autogenerated")
     
     const script = path.join("script", 'build', 'intermediate', "ts")
+    
+    const campaignScript = path.join("script", 'campaign', 'mod')
+    const additionalParams = []
+    if (fs.existsSync(campaignScript)) {
+        additionalParams.push(`--folder-path`, `${campaignScript};script/campaign/mod`)
+    }
 
     try {
         fs.unlinkSync(destination)
@@ -1985,9 +1991,10 @@ function BuildPack() {
         `--folder-path`, `${dae_prince};ui/portraits/portholes/dae_prince`,
         `--folder-path`, `${dae_prince_unitCard};ui/portraits/units/dae_prince`,
 
-        `--folder-path`, `${script};script/campaign/mod`
+        `--folder-path`, `${script};script/campaign/mod`,
+        
 
-    ], 
+    ].concat(additionalParams), 
     { encoding: 'utf8', stdio: 'inherit'})
     console.log(`Done for "${PROJECT_NAME}"`)
 }
