@@ -1,0 +1,29 @@
+[
+    {
+        "AncillaryKey" : "admiralnelson_jousting_shield_marienberg_shield_anciliary_key",
+        "PowerLevel" : 20,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 6
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_enchanted_shield_shield_anciliary_key",
+        "PowerLevel" : 40,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
+                "Scope" : "character_to_character_own",
+                "Value" : 12
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 15
+            }
+        ]
+    }
+]

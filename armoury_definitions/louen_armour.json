@@ -264,5 +264,33 @@
             "kitbasher_pauldrons_louen_the_armour_of_briliance"
         ],
         "Powerlevel": 25
+    },
+    {
+        "ItemName": "louen_admiralnelson_questing_knight_tabard_item_key",
+        "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
+        "LocalisedName": "Questing Knight's Tabard",
+        "Description": "None",
+        "Type": "torso", 
+        "IsItemDefinedFromAncillary": true,
+        "AssociatedAncillaryKey": "admiralnelson_questing_knight_tabard_item_key",
+        "AssociatedWithArmouryItemSet": null,
+        "Skeleton": "humanoid01c",
+        "ItemCategory": "unique",
+        "UiIcon": "assets/icons/louen_admiralnelson_questing_knight_tabard_item_key.png",
+        "Thumbnail": null,
+        "UnitCardThumbnail": null,
+        "VariantMesh": "variantmeshes\\armour_torso\\massif_tabard_of_questing_knight\\massif_tabard_of_questing_knight.wsmodel",
+        "VariantMeshDefinitionShouldCreate": true,
+        "VariantMeshScale": 1,
+        "VariantMeshMountScale": 1,
+        "BattleAnimation": null,
+        "CampaignAnimation": null,
+        "OnlyCompatibleWithItem": null,
+        "AudioType": "audio_armour_type:plate",
+        "PreferencedItems": [
+            "louen_admiralnelson_gilded_greaves_item_key",
+            "kitbasher_pauldrons_louen_the_armour_of_briliance"
+        ],
+        "Powerlevel": 25
     }
 ]
