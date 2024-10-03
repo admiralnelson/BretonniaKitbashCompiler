@@ -4,15 +4,25 @@
         "PowerLevel" : 20,
         "Effects" : [
             {
-                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "EffectKey" : "wh_main_effect_attribute_enable_expert_charge_defence",
                 "Scope" : "character_to_character_own",
-                "Value" : 6
+                "Value" : 1
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_charge_bonus_add",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
+                "Scope" : "character_to_character_own",
+                "Value" : 5
             }
         ]
     },
     {
         "AncillaryKey" : "admiralnelson_enchanted_shield_shield_anciliary_key",
-        "PowerLevel" : 40,
+        "PowerLevel" : 50,
         "Effects" : [
             {
                 "EffectKey" : "wh_main_effect_character_stat_melee_defence",
@@ -20,9 +30,110 @@
                 "Value" : 12
             },
             {
-                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "EffectKey" : "wh_main_effect_character_stat_physical_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 20
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_grail_knight_shield_shield_anciliary_key",
+        "PowerLevel" : 60,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
                 "Scope" : "character_to_character_own",
                 "Value" : 15
+            },
+            {
+                "EffectKey" : "wh2_main_effect_character_stat_weapon_strength_vs_vampire_counts",
+                "Scope" : "character_to_character_own",
+                "Value" : 15
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_ward_save",
+                "Scope" : "character_to_character_own",
+                "Value" : 10
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 5
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_kite_shield_shield_anciliary_key",
+        "PowerLevel" : 2,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_missile_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 6
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_bretonni_three_symbols_shield_shield_anciliary_key",
+        "PowerLevel" : 35,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_physical_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 15
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_missile_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 6
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_bretonni_shield_shield_anciliary_key",
+        "PowerLevel" : 40,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_physical_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 15
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
+                "Scope" : "character_to_character_own",
+                "Value" : 6
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_bretonni_reinforced_cross_shield_shield_anciliary_key",
+        "PowerLevel" : 55,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_physical_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 15
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_melee_defence",
+                "Scope" : "character_to_character_own",
+                "Value" : 6
+            },
+            {
+                "EffectKey" : "wh_main_effect_character_stat_armour",
+                "Scope" : "character_to_character_own",
+                "Value" : 5
+            }
+        ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_fleur_de_lys_shield_shield_anciliary_key",
+        "PowerLevel" : 30,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_magic_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 35
             }
         ]
     }

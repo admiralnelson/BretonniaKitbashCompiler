@@ -46,5 +46,16 @@
                 "Value" : 3
             }
         ]
+    },
+    {
+        "AncillaryKey" : "admiralnelson_basic_shield_item_key",
+        "PowerLevel" : 20,
+        "Effects" : [
+            {
+                "EffectKey" : "wh_main_effect_character_stat_missile_resistance",
+                "Scope" : "character_to_character_own",
+                "Value" : 5
+            }
+        ]
     }
 ]
