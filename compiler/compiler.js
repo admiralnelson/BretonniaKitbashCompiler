@@ -1884,13 +1884,23 @@ console.log("Building typescript")
 BuildScript()
 
 function CompileTypescriptProject() {
-    const result = spawnSync("build_campaign.bat", [], {
+    const currentPath = process.cwd()
+    const script = path.join(currentPath, "build_campaign.bat")
+    console.log(script)
+    const result = spawnSync(script, [], {
         stdio: "inherit",
-        encoding: 'utf8'
+        encoding: 'utf8',
+        shell: true
     })
 
-    if(result.status == 1) {
+    if(result.status != 0) {
         console.error("Typescript encounter a compiler error, please check your project in campaign/mod")
+        console.error("code: " + result.status)
+
+        if (result.error) {
+            console.error('Error executing script:', result.error);
+        }
+
         throw "compiler error"
     }
 }
