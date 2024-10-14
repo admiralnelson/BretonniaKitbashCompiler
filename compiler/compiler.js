@@ -742,8 +742,8 @@ function GenerateArmoryItemUiInfos() {
     for (const def of ArmouryDefs) {
         let type = ""
         switch (def.ItemCategory) {
-            case "unique":
-                type = "const_kitbasher_10_unique"
+            case "unique": //means the same
+                type = "const_kitbasher_20_legendary" //type = "const_kitbasher_10_unique"
                 break
             case "legendary":
                 type = "const_kitbasher_20_legendary"
