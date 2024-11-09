@@ -1658,7 +1658,7 @@ function InsertDummyAssets() {
     
     const fileRequiredAssetName = path.join("required_assets", "transparent_wings.png")
     const fileRequiredAssetName2 = path.join("required_assets", "transparent_wings2.png")
-    const fileRequiredAssetName3 = path.join("required_assets", "dummy_wings_icon.png")
+    const fileRequiredAssetName3 = path.join("required_assets", "no_item.png")
     
     const output = []
     for (const skeleton of Skeletons) {
