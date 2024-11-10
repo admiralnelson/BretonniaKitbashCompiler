@@ -200,9 +200,10 @@ namespace LouenArmoury {
                 return isChivalryAbove1000 && !isLouenHaveBattleCrown
             },
             (context) => {
-                if(!context.faction) return false
+                if(!context.faction) return
                 
                 const faction = WrapIFactionScriptToFaction(context.faction())
+                if(faction == null) return
                 const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
 
                 setTimeout(() => {

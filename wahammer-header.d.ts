@@ -404,7 +404,7 @@ interface IRegionScript extends INullScript {
     province(): IProvinceScript
     /** Faction province that owns this region */
     faction_province(): IFactionProvinceManager
-    pooled_resource_manager(): IPooledResourceManager
+    pooled_resource_manager(): IPooledResourceManagerScript
     bonus_values(): IBonusValuesScript
     
 }
@@ -502,7 +502,7 @@ interface IMilitaryForceScript extends INullScript {
     has_effect_bundle(bundleKey: string): boolean
     effect_bundles(): IEffectBundleListScript
     force_type(): IMilitaryForceTypeScript
-    pooled_resource_manager(): IPooledResourceManager
+    pooled_resource_manager(): IPooledResourceManagerScript
     bonus_values(): IBonusValuesScript
     is_set_piece_battle_army(): boolean
     /** returns battle_set_piece_armies record key for this military force. Will be empty if this is not a quest battle army */
@@ -1074,7 +1074,7 @@ interface ICharacterDetailsScript extends INullScript {
     family_member(): any
     character_initiative_sets(): ICharacterInitiativeSetListScript
     lookup_character_initiative_set_by_key(recordKey: string): ICharacterInitiativeSetListScript
-    pooled_resource_manager(): IPooledResourceManager
+    pooled_resource_manager(): IPooledResourceManagerScript
     character(): ICharacterScript
 }
 
