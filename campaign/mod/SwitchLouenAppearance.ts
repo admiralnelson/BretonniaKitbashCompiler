@@ -83,7 +83,9 @@ namespace LouenArmoury {
                 const faction = WrapIFactionScriptToFaction(context.faction())
                 const isResearchMetTarget = context.technology() == "wh_dlc07_tech_brt_heraldry_unification"
                 const isFactionKingLouen  = faction?.FactionKey  == "wh_main_brt_bretonnia"
-                
+                if(!isFactionKingLouen) return false
+
+
                 return isResearchMetTarget && isFactionKingLouen
             },
             (context) => {
@@ -116,6 +118,7 @@ namespace LouenArmoury {
 
                 const isAroundCourounne = characterPosition == "wh3_main_combi_region_castle_carcassonne"
                 const isFactionLouen    =  factionKey == "wh_main_brt_bretonnia"
+                if(!isFactionLouen) return false
 
                 const faction      = WrapIFactionScriptToFaction(context.character().faction())
                 if(faction?.FactionLeader == null) return false
@@ -151,15 +154,15 @@ namespace LouenArmoury {
                 if(!context.confederation) return false
                 if(!context.faction) return false
 
+                                
+                const thisFaction = WrapIFactionScriptToFaction(context.faction())
+                const thisFactionKey = thisFaction?.FactionKey
+                const isThisFactionKeyLouenFaction = thisFactionKey == "wh_main_brt_bretonnia"
+                if(!isThisFactionKeyLouenFaction) return false
 
                 const factionToConfederate = WrapIFactionScriptToFaction(context.confederation())
                 const factionKey = factionToConfederate?.FactionKey
                 const isFactionKeyCarcassone = factionKey == "wh_main_brt_carcassonne"
-
-                
-                const thisFaction = WrapIFactionScriptToFaction(context.faction())
-                const thisFactionKey = thisFaction?.FactionKey
-                const isThisFactionKeyLouenFaction = thisFactionKey == "wh_main_brt_bretonnia"
 
                 return isFactionKeyCarcassone && isThisFactionKeyLouenFaction
             },
@@ -171,6 +174,39 @@ namespace LouenArmoury {
 
                 setTimeout(() => {
                     louenHimself?.AddAnciliary("admiralnelson_louen_royal_crown_item_key")
+                }, 300)
+            },
+            true
+        )
+
+        core.add_listener(
+            "award his Battle Crown when Errantry war is triggered (Chivalry > 1000)",
+            "idk what even to check here",
+            (context) => {
+                if(!context.faction) return false
+                
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                if(faction == null) return false
+                const isFactionKingLouen = faction.FactionKey === "wh_main_brt_bretonnia"
+                if(!isFactionKingLouen) return false
+
+                const totalChivalry = faction.GetPooledResource("brt_chivalry")
+                const isChivalryAbove1000 = totalChivalry > 1000
+
+                if(faction.FactionLeader == null) return false
+                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
+                const isLouenHaveBattleCrown = louenHimself?.HasAmouryItemInCharacter("admiralnelson_louen_royal_battle_crown_item_key")
+
+                return isChivalryAbove1000 && !isLouenHaveBattleCrown
+            },
+            (context) => {
+                if(!context.faction) return false
+                
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
+
+                setTimeout(() => {
+                    louenHimself?.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key")
                 }, 300)
             },
             true
