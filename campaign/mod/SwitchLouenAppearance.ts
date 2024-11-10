@@ -42,6 +42,34 @@ namespace LouenArmoury {
             },
             true
         )
+
+        core.add_listener(
+            "add additional louen item when receiving -> The Sword of Couroune",
+            "CharacterAncillaryGained",
+            (context) => {
+                if(!context.character) return false
+                if(!context.ancillary) return false
+                
+                const character   = x.WrapICharacterObjectToCharacter(context.character())
+                const isKitbashed = x.KitbashedCharacter.TryCast(character) != null
+                const isLouen     = character.SubtypeKey == "wh_main_brt_louen_leoncouer"
+                const isAncillaryTarget = context.ancillary() == "wh_main_anc_weapon_the_sword_of_couronne"
+    
+                return isKitbashed && isLouen && isAncillaryTarget
+            },
+            (context) => {
+                if(!context.character) return 
+                if(!context.ancillary) return
+                
+                const character = WrapICharacterObjectToCharacter(context.character())
+
+                setTimeout( () => {
+                    character.AddAnciliary("wh_main_anc_armour_the_lions_shield")
+                }, 100)
+    
+            },
+            true
+        )
     })
 
 }
