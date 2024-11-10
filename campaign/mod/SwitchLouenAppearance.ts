@@ -181,7 +181,7 @@ namespace LouenArmoury {
 
         core.add_listener(
             "award his Battle Crown when Errantry war is triggered (Chivalry > 1000)",
-            "idk what even to check here",
+            "FactionTurnStart",
             (context) => {
                 if(!context.faction) return false
                 
