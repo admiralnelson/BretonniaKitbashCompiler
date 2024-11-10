@@ -1,4 +1,5 @@
 declare namespace BretonniaInGameKitbash {
+
     type CallbackBeforeEnablingArmoury = {
         (agentKey: string, character: Character): void;
     };

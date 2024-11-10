@@ -1260,6 +1260,28 @@ This function can also reposition the camera, so it's best used on game creation
     add_armory_item_to_character(characterObject: ICharacterScript, itemKey: string, equipDefault?: boolean, clearConflictingItem?: boolean): boolean
     
     /**
+     * Returns the active slot state for the specified armory item variant on the specified character. If no slot state value can be found then "INVALID" is returned.
+     * @param characterObject 
+     * @param itemVariant Variant of armory item to query, from the armory_item_variants database table
+     */
+    get_active_armory_item_variant_slot_state_for_character(characterObject: ICharacterScript, itemVariant: string): string
+
+    /**
+     * Equips a specific variant of an armory item on the specified character.
+     * @param characterObj Character to add item to.
+     * @param itemVariantKey 	Variant of armory item to equip, from the armory_item_variants database table.
+     * @param clearConflictingItem Unequips any conflicting items when this item is equipped.
+     */
+    equip_armory_item_variant_on_character(characterObj: ICharacterScript, itemVariantKey: string, clearConflictingItem?: boolean): boolean
+
+    /**
+     * Removes an armory item from a character.
+     * @param characterObject Character to remove item from
+     * @param armoryItem Key for armory item to unequip, from the armory_items database table.
+     */
+    remove_armory_item_from_character(characterObject: ICharacterScript, armoryItem: string): boolean
+
+    /**
      * Returns true if it's the supplied faction turn. The faction is specified by key.
      * @param factionKey Faction key, from the factions database table.
      */
