@@ -1376,6 +1376,7 @@ interface IContext {
      * - WarCoordinationRequestIssued  
      * - WoMCompassUserActionTriggeredEvent  
      * - WoMCompassUserDirectionSelectedEvent  
+     * - FactionJoinsConfederation
      */
     faction?() : IFactionScript
     /**
@@ -1646,6 +1647,19 @@ interface IContext {
      *  - CharacterAncillaryGained
      */
     ancillary?(): string
+    /**
+     *   This function is available for this following events:  
+     * 
+     *  - ResearchCompleted
+     */
+    technology?(): string
+
+     /**
+     *   This function is available for this following events:  
+     * 
+     *  - FactionJoinsConfederation
+     */
+    confederation?(): IFactionScript
 }
 
 interface IRealTimer {
