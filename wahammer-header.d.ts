@@ -775,9 +775,243 @@ interface ICharacterInitiativeSetListScript extends INullScript {
 
 }
 
-interface IPooledResourceManager extends INullScript {
-
+interface IFactionProvinceScript extends INullScript {
+    //TODO
 }
+
+interface IPooledResourceScript extends INullScript {
+
+    /** 
+     * Record key for this resource pool 
+     * @returns The resource pool key as a string
+     */
+    key(): string;
+
+    /** 
+     * Total value of this pool 
+     * @returns The total value as an int32
+     */
+    value(): number;
+
+    /** 
+     * Returns the Pooled Resource Manager 
+     * @returns The pooled resource manager interface
+     */
+    manager(): IPooledResourceManagerScript
+
+    /** 
+     * Percentage of the total capacity within min and max bounds 
+     * @returns The capacity percentage as an int32
+     */
+    percentage_of_capacity(): number;
+
+    /** 
+     * Minimum value of this pool, including modifications from effects 
+     * @returns Minimum value as an int32
+     */
+    minimum_value(): number;
+
+    /** 
+     * Maximum value of this pool, including modifications from effects 
+     * @returns Maximum value as an int32
+     */
+    maximum_value(): number;
+
+    /** 
+     * Active effect bundle key for this resource's type for this faction 
+     * @param type - The effect type as a card32
+     * @returns The active effect key as a string
+     */
+    active_effect(type: number): string;
+
+    /** 
+     * Number of possible effect types, consistent across all pools 
+     * @returns The effect type count as a card32
+     */
+    number_of_effect_types(): number;
+
+    /** 
+     * All factors contributing to this pool, including current turn transactions 
+     * @returns The list of pooled resource factors
+     */
+    factors(): IPooledResourceFactorListScript
+
+    /** 
+     * Lookup a pooled resource factor by its key 
+     * @param factor_key - The factor's unique key
+     * @returns The pooled resource factor interface
+     */
+    factor_by_key(factor_key: string): IPooledResourceFactorScript
+
+    /** 
+     * Scope of the pooled resource, where it resides and gathers income 
+     * @returns The scope as a string
+     */
+    scope(): string;
+
+    /** 
+     * Checks if this pooled resource has persistent factors 
+     * @returns true if factors persist, otherwise false
+     */
+    has_persistent_factors(): boolean;
+}
+
+interface IPooledResourceListScript extends IListScript {
+
+    /** 
+     * Returns the item at the specified index 
+     * @param index - A positive integer within the range [0, num_items - 1]
+     * @returns The pooled resource interface at the specified index
+     */
+    item_at(index: number): IPooledResourceScript;
+}
+
+interface IPooledResourceFactorListScript extends IListScript {
+
+    /** 
+     * Returns the item at the specified index 
+     * @param index - A positive integer within the range [0, num_items - 1]
+     * @returns The pooled resource interface at the specified index
+     */
+    item_at(index: number): IPooledResourceScript;
+}
+
+interface IPooledResourceFactorScript extends INullScript {
+    /** 
+     * Pooled resource factor record key of this factor 
+     * @returns The factor key as a string
+     */
+    key(): string;
+
+    /** 
+     * Total value of this factor at the current time, potentially negative 
+     * @returns The factor value as an int32
+     */
+    value(): number;
+
+    /** 
+     * Percentage of the total capacity within min and max bounds 
+     * @returns The capacity percentage as an int32
+     */
+    percentage_of_capacity(): number;
+
+    /** 
+     * Minimum value of this factor, including modifications from effects 
+     * @returns Minimum value as an int32
+     */
+    minimum_value(): number;
+
+    /** 
+     * Maximum value of this factor, including modifications from effects 
+     * @returns Maximum value as an int32
+     */
+    maximum_value(): number;
+}
+
+interface IPooledResourceManagerScript extends INullScript {
+    /** Is this the null script interface */
+    is_null_interface(): boolean;
+
+    /** 
+     * Test whether the resources contained in this manager could afford to pay the specified resource cost 
+     * @param resource_cost_key - The key of the resource cost
+     * @returns true if affordable, otherwise false
+     */
+    can_afford_resource_cost(resource_cost_key: string): IPooledResourceFactorListScript
+
+    /** 
+     * Scope of this pooled resource manager 
+     * @returns The scope as a string
+     */
+    scope(): string;
+
+    /** 
+     * Is the pooled resource manager associated with a faction?
+     * True if associated with faction, character, military force, or region
+     * @returns boolean
+     */
+    has_owning_faction(): boolean;
+
+    /** 
+     * Faction that owns this pooled resource manager, if any 
+     * @returns Faction interface
+     */
+    owning_faction(): IFactionScript
+
+    /** 
+     * Is the pooled resource manager associated with a region? 
+     * @returns boolean
+     */
+    has_region(): boolean;
+
+    /** 
+     * Gets the region associated with this pooled resource manager, if any 
+     * @returns Region interface
+     */
+    region(): IRegionScript
+
+    /** 
+     * Is the pooled resource manager associated with a character? 
+     * @returns boolean
+     */
+    has_character(): boolean;
+
+    /** 
+     * Gets the character associated with this pooled resource manager, if any 
+     * @returns Character interface
+     */
+    character(): ICharacterScript
+
+    /** 
+     * Is the pooled resource manager associated with a military force? 
+     * @returns boolean
+     */
+    has_military_force(): boolean;
+
+    /** 
+     * Gets the military force associated with this pooled resource manager, if any 
+     * @returns Military force interface
+     */
+    military_force(): IMilitaryForceScript
+
+    /** 
+     * Is the pooled resource manager associated with a province? 
+     * @returns boolean
+     */
+    has_province(): boolean;
+
+    /** 
+     * Gets the province associated with this pooled resource manager, if any 
+     * @returns Province interface
+     */
+    province(): IProvinceScript
+
+    /** 
+     * Is the pooled resource manager associated with a faction province manager? 
+     * @returns boolean
+     */
+    has_faction_province(): boolean;
+
+    /** 
+     * Gets the faction province associated with this pooled resource manager, if any 
+     * @returns Faction province interface
+     */
+    faction_province(): IFactionProvinceScript
+
+    /** 
+     * List of all resources contained in this manager 
+     * @returns List of pooled resources
+     */
+    resources(): IPooledResourceListScript
+
+    /** 
+     * Pooled resource with the specified record key. Null if not present 
+     * @param pooled_resource_key - The key of the pooled resource
+     * @returns Resource interface, or null if not present
+     */
+    resource(pooled_resource_key: string): IPooledResourceScript
+}
+
 
 interface IBuildingScript extends INullScript {
     model(): IModelScript
