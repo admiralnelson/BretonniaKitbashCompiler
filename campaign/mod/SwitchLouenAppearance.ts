@@ -191,13 +191,17 @@ namespace LouenArmoury {
                 if(!isFactionKingLouen) return false
 
                 const totalChivalry = faction.GetPooledResource("brt_chivalry")
-                const isChivalryAbove1000 = totalChivalry > 1000
+                const isChivalryAbove2000 = totalChivalry > 2000
 
                 if(faction.FactionLeader == null) return false
                 const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
-                const isLouenHaveBattleCrown = louenHimself?.HasAmouryItemInCharacter("admiralnelson_louen_royal_battle_crown_item_key")
+                if(louenHimself == null) return false
+                
+                const isLouenHaveBattleCrown = louenHimself.HasAmouryItemInCharacter("kitbasher_head_louen_battle_crown")
+                const isLouenHaveCrown       = louenHimself.HasAmouryItemInCharacter("kitbasher_head_louen_crown")
 
-                return isChivalryAbove1000 && !isLouenHaveBattleCrown
+
+                return isChivalryAbove2000 && !isLouenHaveBattleCrown && isLouenHaveCrown
             },
             (context) => {
                 if(!context.faction) return
