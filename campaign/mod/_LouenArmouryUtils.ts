@@ -294,4 +294,14 @@ namespace LouenArmoury {
     export function clearInterval(id: number): boolean {
         return TimerManager.Instance.Kill(id)
     }
+
+    
+    /**
+     * DO NOT USE THIS FUNCTION UNLESS YOU'RE 100% THE OBJECT IS COMPATIBLE AND CASTABLE TO THE TARGET CLASS
+     * @param x Object
+     * @returns 
+     */
+    export function TrustMeThisCast<T>(x: unknown): T {
+        return x as T;
+    }
 }

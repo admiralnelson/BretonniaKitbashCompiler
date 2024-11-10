@@ -179,6 +179,25 @@ namespace LouenArmoury {
         public TriggerMission(missionKey: string, fireImmediately: boolean = true): void {
             cm.trigger_mission(this.FactionKey, missionKey, fireImmediately)
         }
+        
+        /**
+         * Get pooled resource associated with the faction. I.E measuring the amount of chivalry
+         * @returns Returns NAN if resourceKey is invalid!
+         * @param resourceKey 
+         */
+        GetPooledResource(resourceKey: string): number {
+            const faction = this.GetFactionInterface()
+            const query   = faction.pooled_resource_manager()
+                                   .resource(resourceKey)
+            const isQueryValid = query.is_null_interface()
+            
+            if(!isQueryValid) {
+                console.error("Invalid resource key id: " + resourceKey)
+                return Number.NaN
+            }
+
+            return query.value()
+        }
 
         /**(Getter) gets all lords and champions, wrap them in generic Character class */
         public get Characters(): Character[] {

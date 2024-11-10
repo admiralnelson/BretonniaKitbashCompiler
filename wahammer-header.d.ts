@@ -653,10 +653,6 @@ interface ICharacterScript extends INullScript, ICharacterDetailsScript, IModelS
     family_member(): IFamilyMemberScript
 }
 
-interface IPooledResourceManager extends INullScript {
-
-}
-
 interface IFactionScript extends INullScript {
     command_queue_index(): number
     region_list(): IRegionListScript
@@ -744,7 +740,7 @@ interface IFactionScript extends INullScript {
     num_faction_slaves(): number
     max_faction_slaves(): number
     percentage_faction_slaves(): number
-    pooled_resource_manager(): IPooledResourceManager
+    pooled_resource_manager(): IPooledResourceManagerScript
     has_ritual_chain(ritualKey: string): boolean
     has_access_to_ritual_category(ritualCategoryKey: string): boolean
     get_climate_suitability(climateKey: string): string
