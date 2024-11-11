@@ -243,7 +243,7 @@ namespace LouenArmoury {
             true
         )
 
-        //UNTESTED
+        //TESTED OK
         core.add_listener(
             "for AI only",
             "FactionTurnStart",
