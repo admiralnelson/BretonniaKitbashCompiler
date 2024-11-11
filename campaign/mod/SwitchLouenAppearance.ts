@@ -10,9 +10,19 @@ namespace LouenArmoury {
         }
     )
 
+    function IsBretonnianFactionControlledByHuman() {
+        const isMorgiana = GetFactionByKey("wh_main_brt_carcassonne")?.IsHuman
+        const isRepanse  = GetFactionByKey("wh2_dlc14_brt_chevaliers_de_lyonesse")?.IsHuman
+        const isAlberic  = GetFactionByKey("wh_main_brt_bordeleaux")?.IsHuman
+
+        return isMorgiana || isRepanse || isAlberic
+    }
+
 
 
     OnCampaignStart( () => {
+
+        //TESTED OK
         core.add_listener(
             "add additional louen item when receiving -> The Armour of Briliance",
             "CharacterAncillaryGained",
@@ -45,6 +55,7 @@ namespace LouenArmoury {
             true
         )
 
+        //TESTED OK
         core.add_listener(
             "add additional louen item when receiving -> The Sword of Couroune",
             "CharacterAncillaryGained",
@@ -73,6 +84,7 @@ namespace LouenArmoury {
             true
         )
 
+        //UNTESTED
         core.add_listener(
             "this trigger awards louen his crown when unification research is completed!",
             "ResearchCompleted", 
@@ -107,6 +119,7 @@ namespace LouenArmoury {
             true
         )
 
+        //UNTESTED
         core.add_listener(
             "award his Royal cape: if region of wh3_main_combi_region_castle_carcassonne is taken by Louen Himself by force",
             "CharacterPerformsSettlementOccupationDecision",
@@ -122,14 +135,14 @@ namespace LouenArmoury {
 
                 const faction      = WrapIFactionScriptToFaction(context.character().faction())
                 if(faction?.FactionLeader == null) return false
-                const louenHimself          = x.FindCharacter(faction.FactionLeader.CqiNo)
+                const louenHimself          = faction.FactionLeader
                 
                 /**
                  * Why check louen has the cape? the assumption is Carcassone owned by hostile faction 
                  * and it could changes owner back and forth
                  */
                 if(louenHimself == null) return false
-                const kitbashedLouen        = x.KitbashedCharacter.TryCast(louenHimself)
+                const kitbashedLouen        = x.KitbashedCharacter.TryCast(TrustMeThisCast(louenHimself))
                 const isLouenHaveTheCape = kitbashedLouen?.HasAmouryItemInCharacter("louen_admiralnelson_louen_royal_cape_item_key")
 
 
@@ -147,6 +160,7 @@ namespace LouenArmoury {
             true
         )
 
+        //TESTED ok
         core.add_listener(
             "award his Royal cape: if Carcassonne is join Louen",
             "FactionJoinsConfederation",
@@ -155,30 +169,42 @@ namespace LouenArmoury {
                 if(!context.faction) return false
 
                                 
-                const thisFaction = WrapIFactionScriptToFaction(context.faction())
+                const thisFaction = WrapIFactionScriptToFaction(context.confederation())
                 const thisFactionKey = thisFaction?.FactionKey
                 const isThisFactionKeyLouenFaction = thisFactionKey == "wh_main_brt_bretonnia"
                 if(!isThisFactionKeyLouenFaction) return false
 
-                const factionToConfederate = WrapIFactionScriptToFaction(context.confederation())
+                const factionToConfederate = WrapIFactionScriptToFaction(context.faction())
                 const factionKey = factionToConfederate?.FactionKey
                 const isFactionKeyCarcassone = factionKey == "wh_main_brt_carcassonne"
+                const louenHimself          = thisFaction?.FactionLeader
+                
+                /**
+                 * Why check louen has the cape? 
+                 * there could be case that Louen could already own some part of Carcassone already which could trigger
+                 * the cape award script previously
+                 */
+                if(louenHimself == null) return false
+                const kitbashedLouen        = x.KitbashedCharacter.TryCast(TrustMeThisCast(louenHimself))
+                const isLouenHaveTheCape = kitbashedLouen?.HasAmouryItemInCharacter("louen_admiralnelson_louen_royal_cape_item_key")
 
-                return isFactionKeyCarcassone && isThisFactionKeyLouenFaction
+
+                return isFactionKeyCarcassone && isThisFactionKeyLouenFaction && !isLouenHaveTheCape
             },
             (context) => {
-                if(!context.faction) return false
+                if(!context.confederation) return false
 
-                const thisFaction = WrapIFactionScriptToFaction(context.faction())
+                const thisFaction = WrapIFactionScriptToFaction(context.confederation())
                 const louenHimself = thisFaction?.FactionLeader
 
                 setTimeout(() => {
-                    louenHimself?.AddAnciliary("admiralnelson_louen_royal_crown_item_key")
+                    louenHimself?.AddAnciliary("louen_admiralnelson_louen_royal_cape_item_key")
                 }, 300)
             },
             true
         )
 
+        //TESTED OK
         core.add_listener(
             "award his Battle Crown when Errantry war is triggered (Chivalry > 1000)",
             "FactionTurnStart",
@@ -191,29 +217,110 @@ namespace LouenArmoury {
                 if(!isFactionKingLouen) return false
 
                 const totalChivalry = faction.GetPooledResource("brt_chivalry")
-                const isChivalryAbove2000 = totalChivalry > 2000
+                const isChivalryAbove10000 = totalChivalry > 10000
 
                 if(faction.FactionLeader == null) return false
-                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
+                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast(faction.FactionLeader))
                 if(louenHimself == null) return false
                 
                 const isLouenHaveBattleCrown = louenHimself.HasAmouryItemInCharacter("kitbasher_head_louen_battle_crown")
                 const isLouenHaveCrown       = louenHimself.HasAmouryItemInCharacter("kitbasher_head_louen_crown")
 
 
-                return isChivalryAbove2000 && !isLouenHaveBattleCrown && isLouenHaveCrown
+                return isChivalryAbove10000 && !isLouenHaveBattleCrown && isLouenHaveCrown
             },
             (context) => {
                 if(!context.faction) return
                 
                 const faction = WrapIFactionScriptToFaction(context.faction())
                 if(faction == null) return
-                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast<BretonniaInGameKitbash.Character>(faction.FactionLeader))
+                const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast(faction.FactionLeader))
 
                 setTimeout(() => {
                     louenHimself?.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key")
                 }, 300)
             },
+            true
+        )
+
+        //UNTESTED
+        core.add_listener(
+            "for AI only",
+            "FactionTurnStart",
+            (context) => {
+                if(!context.faction) return false
+
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                if(faction == null) return false
+                const isFactionKingLouen = faction.FactionKey === "wh_main_brt_bretonnia"
+                if(!isFactionKingLouen) return false
+                const isKingLouenBot  = !faction.IsHuman
+                if(!isKingLouenBot) return false
+
+                return true
+            },
+            (context) => {
+                if(!context.faction) return
+                
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                const currentTurn = GetTurnNumber()
+                const louenHimself = faction?.FactionLeader
+                if(!louenHimself) return
+
+                const isHumanControlledAnyBret = IsBretonnianFactionControlledByHuman()
+                const stage1 = isHumanControlledAnyBret ? 15 : 2
+                const stage2 = isHumanControlledAnyBret ? 30 : 5  
+                const stage3 = isHumanControlledAnyBret ? 50 : 10
+                const stage4 = isHumanControlledAnyBret ? 70 : 12
+                const stage5 = isHumanControlledAnyBret ? 90 : 15
+
+                switch (currentTurn) {
+                    //give louen his armour
+                    case stage1:
+                        setTimeout( () => {
+                            louenHimself.AddAnciliary("wh2_dlc12_anc_armour_brt_armour_of_brilliance")
+                        }, 100)
+                        break
+
+                    //give louen his sword
+                    case stage2:
+                        setTimeout( () => {
+                            louenHimself.AddAnciliary("wh_main_anc_weapon_the_sword_of_couronne")
+                        }, 100)
+                
+                        break
+                    
+                    //give louen his cape
+                    case stage3:
+                        setTimeout(() => {
+                            louenHimself.AddAnciliary("admiralnelson_louen_royal_cape_item_key")
+                        }, 100)
+
+                        break
+
+                    //give louen his crown
+                    case stage4:
+                        setTimeout(() => {
+                            louenHimself.AddAnciliary("admiralnelson_louen_royal_crown_item_key")
+                        }, 100)
+
+                        break
+
+                    //really late game: give louen his battle crown and talisman of preservation
+                    case stage5:
+                        setTimeout(() => {
+                            louenHimself.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key")
+                        }, 100)
+
+                        setTimeout(() => {
+                            louenHimself.AddAnciliary("wh_main_anc_talisman_talisman_of_preservation")
+                        }, 1200)
+
+                        break
+                    default:
+                        break;
+                }
+            }, 
             true
         )
     })
