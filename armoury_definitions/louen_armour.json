@@ -275,7 +275,7 @@
         "AssociatedAncillaryKey": "admiralnelson_questing_knight_tabard_item_key",
         "AssociatedWithArmouryItemSet": null,
         "Skeleton": "humanoid01c",
-        "ItemCategory": "unique",
+        "ItemCategory": "common",
         "UiIcon": "assets/icons/louen_admiralnelson_questing_knight_tabard_item_key.png",
         "Thumbnail": null,
         "UnitCardThumbnail": null,

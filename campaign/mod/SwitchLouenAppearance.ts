@@ -18,7 +18,68 @@ namespace LouenArmoury {
         return isMorgiana || isRepanse || isAlberic
     }
 
+    function ApplyKingLouenArmouryForAI(faction: Faction) {
+        console.log("OK, we are in")
 
+        const currentTurn = GetTurnNumber()
+        const louenHimself = faction?.FactionLeader
+        if(!louenHimself) return
+
+        console.log("Executing")
+
+        const isHumanControlledAnyBret = IsBretonnianFactionControlledByHuman()
+        const stage1 = isHumanControlledAnyBret ? 15 : 2
+        const stage2 = isHumanControlledAnyBret ? 30 : 5  
+        const stage3 = isHumanControlledAnyBret ? 50 : 10
+        const stage4 = isHumanControlledAnyBret ? 70 : 12
+        const stage5 = isHumanControlledAnyBret ? 90 : 15
+
+        switch (currentTurn) {
+            //give louen his armour
+            case stage1:
+                louenHimself.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance", true, true)
+                break
+
+            case stage1 + 1:
+                louenHimself.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs", true, true)
+                break
+
+            //give louen his sword
+            case stage2:
+                louenHimself.AddArmoryItem("kitbasher_louen_wh_main_anc_weapon_the_sword_of_couronne", true, true)
+        
+                break
+
+            //give louen his shield
+            case stage2 + 1:
+                louenHimself.AddArmoryItem("kitbasher_louen_wh_main_anc_armour_the_lions_shield", true, true)
+
+                break
+            
+            //give louen his cape
+            case stage3:
+                louenHimself.AddArmoryItem("louen_admiralnelson_louen_royal_cape_item_key", true, true)
+
+                break
+
+            //give louen his crown
+            case stage4:
+                louenHimself.AddArmoryItem("kitbasher_head_louen_crown", true, true)
+
+
+                break
+
+            //really late game: give louen his battle crown and talisman of preservation
+            case stage5:
+                louenHimself.AddArmoryItem("kitbasher_head_louen_battle_crown" ,true, true)
+                louenHimself.AddArmoryItem("louen_wh_main_anc_talisman_talisman_of_preservation", true, true)
+
+                break
+            default:
+                console.log("At least we know it didn't do anything")
+                break;
+        }
+    }
 
     OnCampaignStart( () => {
 
@@ -261,65 +322,11 @@ namespace LouenArmoury {
             },
             (context) => {
                 if(!context.faction) return
-                
-                const faction = WrapIFactionScriptToFaction(context.faction())
-                const currentTurn = GetTurnNumber()
-                const louenHimself = faction?.FactionLeader
-                if(!louenHimself) return
 
-                const isHumanControlledAnyBret = IsBretonnianFactionControlledByHuman()
-                const stage1 = isHumanControlledAnyBret ? 15 : 2
-                const stage2 = isHumanControlledAnyBret ? 30 : 5  
-                const stage3 = isHumanControlledAnyBret ? 50 : 10
-                const stage4 = isHumanControlledAnyBret ? 70 : 12
-                const stage5 = isHumanControlledAnyBret ? 90 : 15
-
-                switch (currentTurn) {
-                    //give louen his armour
-                    case stage1:
-                        setTimeout( () => {
-                            louenHimself.AddAnciliary("wh2_dlc12_anc_armour_brt_armour_of_brilliance")
-                        }, 100)
-                        break
-
-                    //give louen his sword
-                    case stage2:
-                        setTimeout( () => {
-                            louenHimself.AddAnciliary("wh_main_anc_weapon_the_sword_of_couronne")
-                        }, 100)
-                
-                        break
-                    
-                    //give louen his cape
-                    case stage3:
-                        setTimeout(() => {
-                            louenHimself.AddAnciliary("admiralnelson_louen_royal_cape_item_key")
-                        }, 100)
-
-                        break
-
-                    //give louen his crown
-                    case stage4:
-                        setTimeout(() => {
-                            louenHimself.AddAnciliary("admiralnelson_louen_royal_crown_item_key")
-                        }, 100)
-
-                        break
-
-                    //really late game: give louen his battle crown and talisman of preservation
-                    case stage5:
-                        setTimeout(() => {
-                            louenHimself.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key")
-                        }, 100)
-
-                        setTimeout(() => {
-                            louenHimself.AddAnciliary("wh_main_anc_talisman_talisman_of_preservation")
-                        }, 1200)
-
-                        break
-                    default:
-                        break;
-                }
+                const factionKey = context.faction().name()
+                const faction = GetFactionByKey(factionKey)
+                if(faction == null) return
+                ApplyKingLouenArmouryForAI(faction)
             }, 
             true
         )

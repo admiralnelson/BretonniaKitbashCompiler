@@ -23,8 +23,8 @@
         "AudioType": "audio_armour_type:plate",
         "PreferencedItems": [
             "louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs",
-            "louen_admiralnelson_louen_royal_cape_item_key",
-            "kitbasher_pauldrons_louen_the_armour_of_briliance"
+            "kitbasher_pauldrons_louen_the_armour_of_briliance",
+            "louen_admiralnelson_louen_royal_cape_item_key"
         ],
         "Powerlevel": 110
     },
@@ -75,9 +75,7 @@
         "CampaignAnimation": null,
         "OnlyCompatibleWithItem": null,
         "AudioType": "audio_armour_type:plate",
-        "PreferencedItems": [
-            "kitbasher_head_louen_crown"
-        ],
+        "PreferencedItems": [],
         "Powerlevel": 100
     },
     {
