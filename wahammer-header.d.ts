@@ -1539,6 +1539,18 @@ This function can also reposition the camera, so it's best used on game creation
      * @param campaignArtSetKey Model key, from the campaign_character_art_sets database table.
      */
     add_unit_model_overrides(characterLookUp: string, campaignArtSetKey: string): void
+
+    /**
+     * Suppresses or un-suppresses the immortality of the specified character. The character is specified by the command-queue index value of the related family_member interface.
+     * @param cqiNumber Family member cqi.
+     * @param surpressOrNot - true, Suppress immortality.
+     */
+    suppress_immortality(cqiNumber: number, surpressOrNot: boolean): void
+
+    /**
+     * Give some money to the faction
+     */
+    treasury_mod(factionKey: string, amount: number): void
 }
 
 /** context of the callback or conditional checks, get your faction, char, etc. from here */
