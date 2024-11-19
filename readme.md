@@ -1,2 +1,2 @@
 # Total Warhammer Typescript Framework
-To compile, run `build_campaign.bat`, if you want clean up the project, run `clean.bat`
+To compile, run `compile.bat`, if you want clean up the project, run `clean.bat`
