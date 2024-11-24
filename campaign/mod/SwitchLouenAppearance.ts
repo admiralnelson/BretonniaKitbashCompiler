@@ -86,14 +86,23 @@ namespace LouenArmoury {
         //TESTED OK
         core.add_listener(
             "add additional louen item when receiving -> The Armour of Briliance",
-            "CharacterAncillaryGained",
+            "FactionGainedAncillary",
             (context) => {
-                if(!context.character) return false
+                if(!context.faction) return false
                 if(!context.ancillary) return false
+
                 
-                const character   = x.WrapICharacterObjectToCharacter(context.character())
-                const isKitbashed = x.KitbashedCharacter.TryCast(character) != null
-                const isLouen     = character.SubtypeKey == "wh_main_brt_louen_leoncouer"
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                if(!faction) return false
+
+                const isFactionCouroune = faction.FactionKey == "wh_main_brt_bretonnia"
+                if(!isFactionCouroune) return false
+
+                const factionLeader = faction.FactionLeader
+                if(!factionLeader) return false
+
+                const isLouen     = factionLeader.SubtypeKey == "wh_main_brt_louen_leoncouer"
+                const isKitbashed = x.KitbashedCharacter.TryCast(TrustMeThisCast(factionLeader)) != null
                 const isAncillaryTarget = context.ancillary() == "wh2_dlc12_anc_armour_brt_armour_of_brilliance"
     
                 return isKitbashed && isLouen && isAncillaryTarget
@@ -105,12 +114,10 @@ namespace LouenArmoury {
                 const character = WrapICharacterObjectToCharacter(context.character())
 
                 setTimeout( () => {
-                    character.AddAnciliary("admiralnelson_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs")
+                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance")
+                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs")
+                    character.AddArmoryItem("kitbasher_pauldrons_louen_the_armour_of_briliance")
                 }, 100)
-
-                setTimeout( () => {
-                    character.AddAnciliary("admiralnelson_louen_royal_pauldrons_pauldrons_item_key")
-                }, 1200)
     
             },
             true

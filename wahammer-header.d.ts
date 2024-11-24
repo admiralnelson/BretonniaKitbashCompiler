@@ -1887,6 +1887,7 @@ interface IContext {
      *   This function is available for this following events:  
      * 
      *  - CharacterAncillaryGained
+     *  - FactionGainedAncillary
      */
     ancillary?(): string
     /**
