@@ -138,7 +138,7 @@ namespace LouenArmoury {
                 const character = WrapICharacterObjectToCharacter(context.character())
 
                 setTimeout( () => {
-                    character.AddAnciliary("wh_main_anc_armour_the_lions_shield")
+                    character.AddArmoryItem("kitbasher_louen_wh_main_anc_armour_the_lions_shield", true, true)
                 }, 100)
     
             },
