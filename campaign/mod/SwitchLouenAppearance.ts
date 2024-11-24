@@ -108,10 +108,16 @@ namespace LouenArmoury {
                 return isKitbashed && isLouen && isAncillaryTarget
             },
             (context) => {
-                if(!context.character) return 
+                if(!context.faction) return 
                 if(!context.ancillary) return
                 
-                const character = WrapICharacterObjectToCharacter(context.character())
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                if(!faction) return
+
+                const character = faction.FactionLeader
+                if(!character) return
+
+                console.log("triggering armour on wh2_dlc12_anc_armour_brt_armour_of_brilliance")
 
                 setTimeout( () => {
                     character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance")
