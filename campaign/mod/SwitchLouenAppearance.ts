@@ -119,11 +119,26 @@ namespace LouenArmoury {
 
                 console.log("triggering armour on wh2_dlc12_anc_armour_brt_armour_of_brilliance")
 
+                // THIS DOESN'T WORK
+                // setTimeout( () => {
+                //     character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance")
+                //     character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs")
+                //     character.AddArmoryItem("kitbasher_pauldrons_louen_the_armour_of_briliance")
+                // }, 100)
+
+
+                //This does. why? cus fuck you that's warscape for you.
                 setTimeout( () => {
-                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance")
-                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs")
-                    character.AddArmoryItem("kitbasher_pauldrons_louen_the_armour_of_briliance")
+                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance", true, true)
                 }, 100)
+
+                setTimeout( () => {
+                    character.AddArmoryItem("louen_wh2_dlc12_anc_armour_brt_armour_of_brilliance_legs", true, true)
+                }, 125)
+
+                setTimeout(() => {
+                    character.AddArmoryItem("kitbasher_pauldrons_louen_the_armour_of_briliance", true, true)
+                }, 150)
     
             },
             true
