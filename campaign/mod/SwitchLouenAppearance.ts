@@ -242,8 +242,9 @@ namespace LouenArmoury {
 
                 const faction      = WrapIFactionScriptToFaction(context.character().faction())
                 const louenHimself = faction?.FactionLeader
+
                 setTimeout(() => {
-                   louenHimself?.AddAnciliary("admiralnelson_louen_royal_cape_item_key")
+                   louenHimself?.AddAnciliary("admiralnelson_louen_royal_cape_item_key", true, true)
                 }, 300)
             },
             true
