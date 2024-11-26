@@ -202,7 +202,7 @@ namespace LouenArmoury {
                 if(!isFactionLeaderLouen) return
 
                 setTimeout(() => {
-                    factionLeader.AddAnciliary("admiralnelson_louen_royal_crown_item_key")
+                    factionLeader.AddAnciliary("admiralnelson_louen_royal_crown_item_key", true, false)
                 }, 1000)
             },
             true
@@ -244,7 +244,7 @@ namespace LouenArmoury {
                 const louenHimself = faction?.FactionLeader
 
                 setTimeout(() => {
-                   louenHimself?.AddAnciliary("admiralnelson_louen_royal_cape_item_key", true, true)
+                   louenHimself?.AddAnciliary("admiralnelson_louen_royal_cape_item_key", true, false)
                 }, 300)
             },
             true
@@ -288,7 +288,7 @@ namespace LouenArmoury {
                 const louenHimself = thisFaction?.FactionLeader
 
                 setTimeout(() => {
-                    louenHimself?.AddAnciliary("louen_admiralnelson_louen_royal_cape_item_key")
+                    louenHimself?.AddAnciliary("louen_admiralnelson_louen_royal_cape_item_key", true, false)
                 }, 300)
             },
             true
@@ -327,7 +327,7 @@ namespace LouenArmoury {
                 const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast(faction.FactionLeader))
 
                 setTimeout(() => {
-                    louenHimself?.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key")
+                    louenHimself?.AddAnciliary("admiralnelson_louen_royal_battle_crown_item_key", true, false)
                 }, 300)
             },
             true
