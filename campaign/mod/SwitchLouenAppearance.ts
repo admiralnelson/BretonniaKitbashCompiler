@@ -296,7 +296,7 @@ namespace LouenArmoury {
 
         //TESTED OK
         core.add_listener(
-            "award his Battle Crown when Errantry war is triggered (Chivalry > 1000)",
+            "award his Battle Crown when Errantry war is triggered (Chivalry == 1000)",
             "FactionTurnStart",
             (context) => {
                 if(!context.faction) return false
@@ -307,7 +307,7 @@ namespace LouenArmoury {
                 if(!isFactionKingLouen) return false
 
                 const totalChivalry = faction.GetPooledResource("brt_chivalry")
-                const isChivalryAbove10000 = totalChivalry > 10000
+                const isChivalryEq10000 = totalChivalry == 10000
 
                 if(faction.FactionLeader == null) return false
                 const louenHimself = x.KitbashedCharacter.TryCast(TrustMeThisCast(faction.FactionLeader))
@@ -317,7 +317,7 @@ namespace LouenArmoury {
                 const isLouenHaveCrown       = louenHimself.HasAmouryItemInCharacter("kitbasher_head_louen_crown")
 
 
-                return isChivalryAbove10000 && !isLouenHaveBattleCrown && isLouenHaveCrown
+                return isChivalryEq10000 && !isLouenHaveBattleCrown && isLouenHaveCrown
             },
             (context) => {
                 if(!context.faction) return
