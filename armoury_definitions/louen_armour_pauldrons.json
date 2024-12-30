@@ -3,7 +3,7 @@
         "ItemName": "louen_admiralnelson_lordly_pauldron_of_courage_pauldrons_item_key",
         "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "Lordly Pauldron of Courage",
-        "Description": "These ornate pauldrons, adorned with inscriptions and gilded emblems, inspire unwavering bravery in battle. They offer exceptional protection and bolster the morale of all who fight alongside the wearer.",
+        "Description": "These ornate pauldrons, adorned with inscriptions and gilded emblems, inspire steadfast bravery in battle. They offer exceptional protection and bolster the morale of all who fight alongside the wearer.",
         "Type": "pauldrons", 
         "IsItemDefinedFromAncillary": true,
         "AssociatedAncillaryKey": "admiralnelson_lordly_pauldron_of_courage_pauldrons_item_key",

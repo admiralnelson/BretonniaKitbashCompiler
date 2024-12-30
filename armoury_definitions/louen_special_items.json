@@ -57,7 +57,7 @@
         "ItemName": "louen_admiralnelson_louen_royal_cape_item_key",
         "SubtypeKeys": ["wh_main_brt_louen_leoncouer"],
         "LocalisedName": "The Royarch's Robe",
-        "Description": "This resplendent robe, edged in royal fur and bearing the fleur-de-lis and lion of Bretonnia, is a symbol of King Louen's divine mandate and unwavering valor in battle.",
+        "Description": "This resplendent robe, edged in royal fur and bearing the fleur-de-lis and lion of Bretonnia, is a symbol of King Louen's divine mandate and steadfast valor in battle.",
         "Type": "cape", 
         "IsItemDefinedFromAncillary": true,
         "AssociatedAncillaryKey": "admiralnelson_louen_royal_cape_item_key",
