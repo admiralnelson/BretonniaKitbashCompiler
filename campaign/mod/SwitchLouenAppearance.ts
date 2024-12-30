@@ -109,7 +109,7 @@ namespace LouenArmoury {
 
                 if(isLouenHaveTheCape) return
 
-                kitbashedLouen.AddAnciliary("louen_admiralnelson_louen_royal_cape_item_key", true, false)
+                kitbashedLouen.AddAnciliary("admiralnelson_louen_royal_cape_item_key", true, false)
             },
             true
         )
