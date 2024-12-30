@@ -259,6 +259,16 @@ namespace LouenArmoury {
             }
             return res
         }
+
+        public get Regions(): Region[] {
+            const result = []
+            const regions = this.factionInterface.region_list()
+            for (let i = 0; i < regions.num_items(); i++) {
+                const theRegion = regions.item_at(i)
+                result.push(WrapIRegionObjectToRegion(theRegion)!)
+            }
+            return result
+        }
         
         /**(Getter) get faction key */
         public get FactionKey() : string {

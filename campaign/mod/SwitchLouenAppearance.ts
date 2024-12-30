@@ -83,6 +83,27 @@ namespace LouenArmoury {
 
     OnCampaignStart( () => {
 
+        core.add_listener(
+            "give louen his cape when region of wh3_main_combi_region_castle_carcassonne is taken by him (human only)",
+            "FactionTurnStart",
+            true,
+            (context) => {
+                if(!context.faction) return false
+
+                const faction = WrapIFactionScriptToFaction(context.faction())
+                if(faction == null) return
+                const isFactionKingLouen = faction.FactionKey === "wh_main_brt_bretonnia"
+                if(!isFactionKingLouen) return
+                const isKingLouenHuman = faction.IsHuman
+                if(!isKingLouenHuman) return
+
+                const region = cm.
+
+                
+            },
+            true
+        )
+
         //TESTED OK
         core.add_listener(
             "add additional louen item when receiving -> The Armour of Briliance",
