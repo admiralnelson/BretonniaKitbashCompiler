@@ -97,9 +97,19 @@ namespace LouenArmoury {
                 const isKingLouenHuman = faction.IsHuman
                 if(!isKingLouenHuman) return
 
-                const region = cm.
+                const region = GetRegionByKey("wh3_main_combi_region_castle_carcassonne")!
+                const isRegionOwnedByAnyFaction = region.Faction != null
+                const isRegionOwnedByLouen = isRegionOwnedByAnyFaction && region.Faction.IsEqual(faction)
 
-                
+                if(!isRegionOwnedByLouen) return
+
+                const louenHimself = faction.FactionLeader
+                const kitbashedLouen = x.KitbashedCharacter.TryCast(TrustMeThisCast(louenHimself))!
+                const isLouenHaveTheCape = kitbashedLouen.HasAmouryItemInCharacter("louen_admiralnelson_louen_royal_cape_item_key")
+
+                if(isLouenHaveTheCape) return
+
+                kitbashedLouen.AddAnciliary("louen_admiralnelson_louen_royal_cape_item_key", true, false)
             },
             true
         )
